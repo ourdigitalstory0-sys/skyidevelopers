@@ -8,15 +8,18 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Skyi Developers Pune | Luxury Flats, Townships & NA Bungalow Plots | Bhugaon, Bhukum, Bavdhan, Baner',
-  description: 'Skyi Developers — Pune\'s premier real estate builder since 2004. Explore Skyi Songbirds (Bhugaon), SKYi Tigers Nest, SKYi PWC Towers, SKYi Manas Lake & PMRDA NA Bungalow Plots (Bhukum/Bavdhan), SKYi Park (Baner), SKYi Aura Heights. RERA & IGBC Platinum certified. ☎ +91 20 6614 3000.',
+  title: 'Skyi Developers Pune | Official Projects | Songbirds, Manas Lake, NA Plots, Tigers Nest, Park Baner',
+  description: 'Skyi Developers — Pune\'s premier real estate builder since 2004. Official portfolio includes Skyi Songbirds (Bhugaon), SKYi Manas Lake & PMRDA NA Bungalow Plots (Bhukum/Bavdhan), SKYi Tigers Nest, SKYi PWC Towers, SKYi Park (Baner), SKYi Iris, SKYi Aura Heights, Skyi Star City (Dhayari). RERA & IGBC Platinum certified. ☎ +91 20 6614 3000.',
   keywords: [
-    'Skyi Developers', 'SKYi Developers', 'Skyi Developer Pune', 'Skyi real estate Pune', 'Skyi properties Pune',
-    'Skyi Songbirds', 'Skyi Songbirds Bhugaon', 'Songbirds Bhugaon Pune', 'SKYi Tigers Nest', 'SKYi PWC Towers',
-    'Manas Lake Pune', 'SKYi Manas Lake', 'Manas Lake Bavdhan', 'Manas Lake Bhukum', 'Manas Lake Paud Road',
-    'SKYi Park Baner', 'SKYi Iris Baner', 'SKYi Aura Heights', 'SKYi Five Baner', 'SKYi Star City Dhayari',
-    'NA bungalow plots Pune', 'NA plots Bhukum', 'NA plots Bavdhan', 'NA plots Manas Lake', 'NA plots Bhugaon',
-    'PMRDA approved NA plots Pune', 'clear title NA plots Pune', 'villa plots Paud Road Pune', 'NRI real estate investment Pune'
+    'Skyi Developers', 'SKYi Developers', 'Skyi Developer Pune', 'Skyi real estate Pune', 'Skyi properties Pune', 'Skyi builders Pune',
+    'Skyi Songbirds', 'Skyi Songbirds Bhugaon', 'Songbirds Bhugaon Pune', 'SKYi Tigers Nest', 'SKYi PWC Towers', 'SKYi PWC Towers Hillside',
+    'Manas Lake Pune', 'SKYi Manas Lake', 'Manas Lake Bavdhan', 'Manas Lake Bhukum', 'Manas Lake Paud Road', 'SKYi Manas Lake NA Plots',
+    'SKYi Park Baner', 'SKYi Iris Baner', 'SKYi Aura Heights', 'SKYi Five Baner', 'SKYi Five Racecourse', 'SKYi Five Maidan',
+    'SKYi Star City Dhayari', 'SKYi Nilay', 'SKYi Aquila', 'SKYi Seher Towers',
+    'NA bungalow plots Pune', 'NA plots Bhukum', 'NA plots Bavdhan', 'NA plots Manas Lake', 'NA plots Bhugaon', 'NA plots Chandani Chowk',
+    'NA plots Kothrud', 'NA plots Baner', 'NA plots Paud Road', 'NA plots Mulshi', 'NA plots Pirangut', 'NA plots Sus', 'NA plots Hinjewadi',
+    'PMRDA approved NA plots Pune', 'clear title NA plots Pune', 'villa plots Paud Road Pune', 'NRI real estate investment Pune',
+    'pune madhe plot', 'pune NA plot sale', 'bhugaon bungalow plot', 'ghar bandhnya sathi plot pune', 'swatacha bungalow pune plot'
   ],
   authors: [{ name: 'Skyi Developers' }],
   publisher: 'Skyi Developers',
@@ -103,7 +106,7 @@ const jsonLdSchema = {
     },
     {
       "@type": "OfferCatalog",
-      "name": "SKYi Official Real Estate & NA Plot Projects",
+      "name": "SKYi Official Real Estate & NA Plot Projects Ecosystem",
       "itemListElement": [
         {
           "@type": "Offer",
@@ -125,7 +128,7 @@ const jsonLdSchema = {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Residence",
-            "name": "SKYi Park & SKYi Iris",
+            "name": "SKYi Park, SKYi Iris & SKYi Five Baner",
             "address": { "@type": "PostalAddress", "addressLocality": "Baner / Bavdhan", "addressRegion": "Pune", "addressCountry": "IN" }
           }
         },
@@ -135,6 +138,22 @@ const jsonLdSchema = {
             "@type": "Residence",
             "name": "SKYi PWC Towers & SKYi Aura Heights",
             "address": { "@type": "PostalAddress", "addressLocality": "Bhugaon / Bavdhan", "addressRegion": "Pune", "addressCountry": "IN" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Residence",
+            "name": "Skyi Star City",
+            "address": { "@type": "PostalAddress", "addressLocality": "Dhayari", "addressRegion": "Pune", "addressCountry": "IN" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Residence",
+            "name": "SKYi Five Racecourse, SKYi Nilay & SKYi Aquila",
+            "address": { "@type": "PostalAddress", "addressLocality": "Racecourse / Bavdhan", "addressRegion": "Pune", "addressCountry": "IN" }
           }
         }
       ]
