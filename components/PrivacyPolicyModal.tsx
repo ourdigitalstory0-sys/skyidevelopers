@@ -21,6 +21,9 @@ export default function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyMod
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.92, y: 20 }}
           onClick={(e) => e.stopPropagation()}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="privacy-modal-title"
         >
           <button
             type="button"
@@ -34,7 +37,7 @@ export default function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyMod
           <div className="privacy-header">
             <div className="privacy-icon"><ShieldCheck size={24} /></div>
             <div>
-              <h2>Legal Disclosures &amp; Privacy Policy</h2>
+              <h2 id="privacy-modal-title">Legal Disclosures &amp; Privacy Policy</h2>
               <p>MahaRERA Registration, FEMA/RBI Disclaimers &amp; Data Protection</p>
             </div>
           </div>

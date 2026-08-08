@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Skyi Developers' }],
   publisher: 'Skyi Developers',
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   metadataBase: new URL('https://skyidevelopers.in'),
   alternates: {
     canonical: 'https://skyidevelopers.in/',
