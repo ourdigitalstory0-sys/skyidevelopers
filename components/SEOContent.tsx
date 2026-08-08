@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, MapPin, Award, Shield, Leaf, FileCheck, CheckCircle2, Globe, DollarSign, ShieldCheck } from 'lucide-react';
+import { ChevronDown, MapPin, Award, Shield, Leaf, FileCheck, CheckCircle2, Globe, DollarSign, ShieldCheck, Compass } from 'lucide-react';
 import './SEOContent.css';
 
-/* ─── FAQ Data (also embedded as schema in app/layout.tsx) ─── */
+/* ─── FAQ Data ─── */
 const FAQS = [
   {
     q: 'What are all the projects by Skyi Developers in Pune?',
@@ -145,6 +145,39 @@ const NRI_BENEFITS = [
     title: 'Global NRI Desk & Virtual Tours',
     desc: 'End-to-end assistance with Power of Attorney (PoA) execution, virtual 3D site tours, and tenant management.',
     icon: <Globe size={20} />,
+  },
+];
+
+const PUNE_REGIONAL_ZONES = [
+  {
+    title: 'West Pune Real Estate Hub',
+    suburbs: 'Bhugaon, Bhukum, Bavdhan, Chandani Chowk, Kothrud, Baner, Balewadi, Aundh, Pashan, Sus, Pirangut, Lavasa Road, Mulshi, Paud Road, Hinjewadi IT Park (Phase 1, 2, 3), Marunji, Nere, Kasaramboli.',
+    desc: 'Pune’s highest appreciating residential corridor with scenic Sahyadri views, metro connectivity, and premier PMRDA NA bungalow plot developments.',
+    color: 'var(--accent-1)',
+  },
+  {
+    title: 'PCMC / North Pune Hub',
+    suburbs: 'Wakad, Tathawade, Punawale, Ravet, Pimple Saudagar, Pimple Nilakh, Chinchwad, Nigdi, Moshi, Bhosari, Chakan, Talegaon, Dehu Road, Akurdi.',
+    desc: 'Industrial & IT manufacturing belt with rapid infrastructure growth, wide concrete roads, and residential plot options near Mumbai-Pune Expressway.',
+    color: '#43e97b',
+  },
+  {
+    title: 'East Pune & IT Corridor Hub',
+    suburbs: 'Kharadi, Viman Nagar, Kalyani Nagar, Magarpatta City, Hadapsar, Wagholi, Mundhwa, Keshav Nagar, EON IT Park, Phursungi, Manjri, Ubale Nagar.',
+    desc: 'IT & financial hub featuring world-class commercial parks, luxury high-rises, and gated plotted communities.',
+    color: '#3b82f6',
+  },
+  {
+    title: 'South Pune Corridor Hub',
+    suburbs: 'Dhayari, Sinhagad Road, Katraj, Ambegaon, Narhe, Warje, Karve Nagar, Undri, Pisoli, NBM Road, Handewadi, Kondhwa, Camp, Racecourse, Fatima Nagar.',
+    desc: 'Established residential zone offering serene green surroundings, Sinhagad fort access, and SKYi Star City integrated community.',
+    color: 'var(--accent-gold)',
+  },
+  {
+    title: 'Central Pune Heritage Hub',
+    suburbs: 'Deccan Gymkhana, Shivajinagar, FC Road, JM Road, Model Colony, Prabhat Road, Erandwane, Sadashiv Peth, Tilak Road, Bund Garden, Koregaon Park.',
+    desc: 'Pune’s prime city center housing top educational institutes, metro junctions, and premium boutique residences.',
+    color: 'var(--accent-4)',
   },
 ];
 
@@ -307,6 +340,32 @@ export default function SEOContent() {
         </div>
       </div>
 
+      {/* ── Entire Pune Real Estate & NA Bungalow Plot Regional Search Index ── */}
+      <motion.div
+        className="pune-zones-section glass"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="na-guide-header">
+          <div className="guide-badge"><Compass size={16} /> Regional Search Index</div>
+          <h3>Entire Pune Real Estate &amp; NA Bungalow Plot Regional Hubs</h3>
+          <p>Exhaustive index of residential corridors, NA bungalow plot clusters, and township developments across West, North, East, South, and Central Pune.</p>
+        </div>
+
+        <div className="pune-zones-grid">
+          {PUNE_REGIONAL_ZONES.map((zone) => (
+            <div key={zone.title} className="pune-zone-card">
+              <div className="pz-accent" style={{ background: zone.color }} />
+              <h4>{zone.title}</h4>
+              <p className="pz-suburbs"><strong>Key Locations:</strong> {zone.suburbs}</p>
+              <p className="pz-desc">{zone.desc}</p>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
       {/* ── Global NRI Real Estate Investment Guide & Regulatory Hub ── */}
       <motion.div
         className="nri-hub-section glass"
@@ -367,7 +426,7 @@ export default function SEOContent() {
           <strong>Skyi Songbirds Bhugaon</strong>, <strong>SKYi Tigers Nest Bhugaon</strong>, <strong>SKYi PWC Towers</strong>, <strong>SKYi PWC Towers Hillside</strong>, <strong>SKYi Aura Heights Bhugaon Bavdhan</strong>, <strong>SKYi Manas Lake Bhukum Bavdhan</strong>, <strong>SKYi Manas Lake NA Bungalow Plots Bhukum Paud Road</strong>, <strong>SKYi Park Baner</strong>, <strong>SKYi Iris Baner Bavdhan</strong>, <strong>SKYi Five Racecourse</strong>, <strong>SKYi Five Maidan</strong>, <strong>SKYi Five Baner</strong>, <strong>SKYi Nilay</strong>, <strong>SKYi Aquila</strong>, <strong>SKYi Seher Towers</strong>, and <strong>Skyi Star City Dhayari</strong>.
         </p>
         <p style={{ marginTop: '8px' }}>
-          <strong>Target Micro-Market Keywords</strong>: NA bungalow plots Bhugaon, NA plots Bhukum, NA plots Bavdhan, NA plots Baner, NA plots Chandani Chowk, NA plots Kothrud, NA plots Paud Road, NA plots Mulshi, NA plots Pirangut, NA plots Sus, NA plots Pashan, NA plots Hinjewadi, NA plots Balewadi, NA plots Aundh, NA plots Wakad, NA plots Warje, NA plots Karve Nagar, NA plots Deccan, NA plots Shivajinagar.
+          <strong>Entire Pune NA Bungalow Plots &amp; Real Estate Keywords</strong>: NA bungalow plots Pune, NA plots in Pune, NA residential plots Pune, NA land Pune, NA villa plots Pune, NA plots for sale Pune, bungalow plots for sale Pune, villa plots for sale Pune, residential land for sale Pune, PMRDA sanctioned NA plots Pune, clear title 7/12 extract NA plots Pune, gated NA bungalow plots Pune, luxury bungalow plots Pune, NA plots Bhugaon, NA plots Bhukum, NA plots Bavdhan, NA plots Chandani Chowk, NA plots Kothrud, NA plots Baner, NA plots Paud Road, NA plots Mulshi, NA plots Pirangut, NA plots Sus, NA plots Pashan, NA plots Hinjewadi, NA plots Balewadi, NA plots Aundh, NA plots Wakad, NA plots Dhayari, NA plots Sinhagad Road, NA plots Warje, NA plots Karve Nagar, NA plots Deccan, NA plots Shivajinagar.
         </p>
         <p style={{ marginTop: '8px' }}>
           <strong>Buyer-Intent &amp; Hinglish Search Queries</strong>: buy NA plot pune, buy bungalow plot bhugaon, buy plot in bhukum, buy villa plot bavdhan, residential land for sale pune, best NA plots pune, NA plots under 50 lakhs pune, NA plots under 75 lakhs pune, NA plots under 1 crore pune, pune madhe plot, pune plot for sale, pune NA plot sale, bhugaon plot, bhukum NA plot, bavdhan bungalow plot, ghar bandhnya sathi plot pune, bungalow bandhnya sathi plot pune, gharasathi plot pune, swatacha bungalow pune plot, investment sathi plot pune, pune madhe jamin.
