@@ -169,6 +169,8 @@ export default function RootLayout({
   return (
     <html lang="en-IN">
       <head>
+        <link rel="preload" href="/songbirds-1.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/bungalow-plots.jpg" as="image" type="image/jpeg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}

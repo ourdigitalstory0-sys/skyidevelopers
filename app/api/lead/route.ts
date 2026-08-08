@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { sanitizeInput } from '../../../utils/security';
 import { logger } from '../../../utils/logger';
+import { checkRateLimit } from '../../../utils/rateLimiter';
 
 interface LeadPayload {
   name: string;
@@ -17,6 +18,16 @@ interface LeadPayload {
 
 export async function POST(request: Request) {
   try {
+    // 0. Rate limiting check
+    const clientIp = request.headers.get('x-forwarded-for') || 'client-ip';
+    const rateLimit = checkRateLimit(clientIp, 5, 10 * 60 * 1000);
+    if (!rateLimit.success) {
+      return NextResponse.json(
+        { success: false, error: 'Too many lead submissions. Please wait 10 minutes before submitting again.' },
+        { status: 429 }
+      );
+    }
+
     const body: LeadPayload = await request.json();
 
     // 1. Sanitize inputs
