@@ -129,7 +129,18 @@ export default function Footer({ onOpenPrivacyModal }: FooterProps) {
               ))}
             </div>
 
-            {/* Social icons */}
+            {/* Strategic Links Cluster */}
+            <div className="strategic-links-wrap" style={{ marginTop: '30px' }}>
+              <p className="social-title" style={{ marginBottom: '12px', color: 'var(--accent-gold)' }}>Strategic Links — SKYi Manas Lake &amp; NA Plots Bhukum</p>
+              <div className="strategic-links-grid">
+                <a href="#plot-estimator" className="strategic-link-item">SKYi Manas Lake NA Bungalow Plots Bhukum</a>
+                <a href="#portfolio" className="strategic-link-item">SKYi Manas Lake Lakeside Apartments Paud Road</a>
+                <a href="#portfolio" className="strategic-link-item">Skyi Songbirds Township Bhugaon Pune</a>
+                <a href="#portfolio" className="strategic-link-item">SKYi Tigers Nest &amp; PWC Towers Bhugaon</a>
+                <a href="#plot-estimator" className="strategic-link-item">PMRDA NA Plot Construction &amp; FSI Estimator</a>
+                <a href="#virtual-tour" className="strategic-link-item">360° Drone Virtual Sightseeing Gallery</a>
+              </div>
+            </div>
             <div className="social-row">
               <p className="social-title">Follow Us</p>
               <div className="social-icons">

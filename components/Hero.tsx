@@ -126,10 +126,12 @@ export default function Hero({ onOpenSiteVisit }: HeroProps) {
         animate="show"
         style={{ y: contentY, opacity: fade }}
       >
-        {/* Badge */}
+        {/* Strategic Launch Link Banner */}
         <motion.div className="hero-badge" variants={item}>
-          <span className="badge-dot" />
-          <span>Est. 2004 — Pune, Maharashtra</span>
+          <a href="#plot-estimator" className="hero-link-badge">
+            <span className="badge-dot" />
+            <span>🔥 Launching 2025: SKYi Manas Lake NA Bungalow Plots Bhukum, Paud Road — PMRDA Approved</span>
+          </a>
         </motion.div>
 
         {/* Title */}

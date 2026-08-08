@@ -110,6 +110,18 @@
   border-radius: 40px;
   margin-bottom: 40px;
 }
+.hero-link-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent-2);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.hero-link-badge:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
 .badge-dot {
   width: 8px; height: 8px;
   border-radius: 50%;
