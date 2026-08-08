@@ -8,12 +8,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Skyi Developers Pune | Luxury 2, 3 & 4 BHK Flats | Songbirds, Manas Lake, Star City, NA Plots',
-  description: 'Skyi Developers — Pune\'s most trusted premium real estate developer since 2004. Luxury 2 BHK, 3 BHK & 4 BHK flats at Songbirds (Bhugaon), SKYi Manas Lake (Bavdhan/Bhukum/Paud Road), Star City (Dhayari). NA Bungalow Plots launching 2025. 23+ projects, 7000+ homes. RERA & IGBC certified. ☎ +91 20 6614 3000.',
+  title: 'Skyi Developers Pune | Luxury Flats, Townships & NA Bungalow Plots | Bhugaon, Bhukum, Bavdhan, Baner',
+  description: 'Skyi Developers — Pune\'s premier real estate builder since 2004. Explore Skyi Songbirds (Bhugaon), SKYi Tigers Nest, SKYi PWC Towers, SKYi Manas Lake & PMRDA NA Bungalow Plots (Bhukum/Bavdhan), SKYi Park (Baner), SKYi Aura Heights. RERA & IGBC Platinum certified. ☎ +91 20 6614 3000.',
   keywords: [
     'Skyi Developers', 'SKYi Developers', 'Skyi Developer Pune', 'Skyi real estate Pune', 'Skyi properties Pune',
-    'Skyi Songbirds', 'Skyi Songbirds Bhugaon', 'Songbirds Bhugaon Pune', '3 BHK flats Bhugaon', '4 BHK flats Bhugaon',
+    'Skyi Songbirds', 'Skyi Songbirds Bhugaon', 'Songbirds Bhugaon Pune', 'SKYi Tigers Nest', 'SKYi PWC Towers',
     'Manas Lake Pune', 'SKYi Manas Lake', 'Manas Lake Bavdhan', 'Manas Lake Bhukum', 'Manas Lake Paud Road',
+    'SKYi Park Baner', 'SKYi Iris Baner', 'SKYi Aura Heights', 'SKYi Five Baner', 'SKYi Star City Dhayari',
     'NA bungalow plots Pune', 'NA plots Bhukum', 'NA plots Bavdhan', 'NA plots Manas Lake', 'NA plots Bhugaon',
     'PMRDA approved NA plots Pune', 'clear title NA plots Pune', 'villa plots Paud Road Pune', 'NRI real estate investment Pune'
   ],
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://skyidevelopers.com/',
-    title: 'Skyi Developers Pune | Premium Residences & NA Bungalow Plots',
+    title: 'Skyi Developers Pune | Luxury Residences & PMRDA NA Bungalow Plots',
     description: 'Explore 23+ delivered projects, 7000+ homes, IGBC Platinum certified townships in Pune.',
     siteName: 'Skyi Developers',
     images: [
@@ -69,7 +70,7 @@ const jsonLdSchema = {
       "@type": "Organization",
       "@id": "https://skyidevelopers.com/#organization",
       "name": "Skyi Developers",
-      "alternateName": ["SKYi Developers", "Skyi Developer Pune"],
+      "alternateName": ["SKYi Developers", "Skyi Developer Pune", "SKYi Properties"],
       "url": "https://skyidevelopers.com/",
       "logo": "https://skyidevelopers.com/logo-white.svg",
       "telephone": "+91-20-66143000",
@@ -99,6 +100,44 @@ const jsonLdSchema = {
         "postalCode": "411045",
         "addressCountry": "IN"
       }
+    },
+    {
+      "@type": "OfferCatalog",
+      "name": "SKYi Official Real Estate & NA Plot Projects",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Residence",
+            "name": "Skyi Songbirds & SKYi Tigers Nest",
+            "address": { "@type": "PostalAddress", "addressLocality": "Bhugaon, Paud Road", "addressRegion": "Pune", "addressCountry": "IN" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Residence",
+            "name": "SKYi Manas Lake & SKYi Manas Lake NA Bungalow Plots",
+            "address": { "@type": "PostalAddress", "addressLocality": "Bhukum / Bavdhan, Paud Road", "addressRegion": "Pune", "addressCountry": "IN" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Residence",
+            "name": "SKYi Park & SKYi Iris",
+            "address": { "@type": "PostalAddress", "addressLocality": "Baner / Bavdhan", "addressRegion": "Pune", "addressCountry": "IN" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Residence",
+            "name": "SKYi PWC Towers & SKYi Aura Heights",
+            "address": { "@type": "PostalAddress", "addressLocality": "Bhugaon / Bavdhan", "addressRegion": "Pune", "addressCountry": "IN" }
+          }
+        }
+      ]
     }
   ]
 };

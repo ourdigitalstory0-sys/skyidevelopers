@@ -5,11 +5,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, MapPin, Award, Shield, Leaf, FileCheck, CheckCircle2, Globe, DollarSign, ShieldCheck } from 'lucide-react';
 import './SEOContent.css';
 
-/* ─── FAQ Data (also embedded as schema in index.html) ─── */
+/* ─── FAQ Data (also embedded as schema in app/layout.tsx) ─── */
 const FAQS = [
   {
     q: 'What are all the projects by Skyi Developers in Pune?',
-    a: 'Skyi Developers has 4 major residential projects in Pune: (1) Skyi Songbirds — 45+ acre township with 1, 3 & 4 BHK homes at Bhugaon, 10 mins from Kothrud. (2) SKYi Manas Lake — 90+ acre IGBC Platinum lakeside township with 2 & 3 BHK apartments at Bavdhan/Bhukum, Paud Road. (3) Skyi Star City — 20-acre integrated township with 2 & 3 BHK homes at Dhayari near DSK Vishwa. (4) NA Bungalow Plots — launching 2025 at Manas Lake campus, Bhukum, Pune.',
+    a: 'Skyi Developers has a wide portfolio across West Pune: (1) Skyi Songbirds — 45+ acre township with 1, 3 & 4 BHK homes at Bhugaon. (2) SKYi Manas Lake & NA Bungalow Plots — 90+ acre IGBC Platinum lakeside township with 2 & 3 BHK apartments and PMRDA NA villa plots at Bhukum/Bavdhan on Paud Road. (3) SKYi Tigers Nest & SKYi PWC Towers — hillside and club-integrated residences at Bhugaon. (4) SKYi Park & SKYi Iris — boutique luxury homes at Baner. (5) SKYi Aura Heights — luxury hillside homes at Bhugaon/Bavdhan. (6) Skyi Star City — 20-acre integrated township at Dhayari near DSK Vishwa.',
+  },
+  {
+    q: 'What is SKYi Tigers Nest and SKYi PWC Towers in Bhugaon Pune?',
+    a: 'SKYi Tigers Nest and SKYi PWC Towers are flagship residential developments within the Skyi Songbirds campus at Bhugaon, Paud Road, Pune. Tigers Nest features luxury hillside sanctuary homes overlooking the NDA forest reserve, while PWC Towers are elite residences integrated directly with the 5-acre Poona Western Club sports complex.',
+  },
+  {
+    q: 'Where are SKYi Park and SKYi Iris located in Baner and Bavdhan?',
+    a: 'SKYi Park and SKYi Iris are boutique residential developments situated in Baner and Bavdhan, Pune. Positioned close to Hinjawadi IT Park, Pashan, Sus, Aundh, and Pune University Road, they offer 2 & 3 BHK luxury residences with zero-passage efficient home designs.',
   },
   {
     q: 'Where is Skyi Songbirds located?',
@@ -17,7 +25,11 @@ const FAQS = [
   },
   {
     q: 'Where is SKYi Manas Lake located? Is it in Bavdhan or Bhukum?',
-    a: 'SKYi Manas Lake is located on Paud Road, straddling the Bavdhan and Bhukum areas of Pune. It is approximately 15 minutes from the Mumbai–Pune Expressway. The 90–100 acre township is IGBC Platinum and CRISIL certified, making it Pune\'s premier eco-friendly lakeside residential community offering 2 BHK and 3 BHK apartments.',
+    a: 'SKYi Manas Lake is located on Paud Road, straddling the Bavdhan and Bhukum areas of Pune. It is approximately 15 minutes from the Mumbai–Pune Expressway. The 90–100 acre township is IGBC Platinum and CRISIL certified, making it Pune\'s premier eco-friendly lakeside residential community offering 2 BHK, 3 BHK apartments and NA villa plots.',
+  },
+  {
+    q: 'How far are SKYi NA Bungalow Plots from Chandani Chowk Metro Station?',
+    a: 'SKYi Manas Lake NA Bungalow Plots at Bhukum are located just 6 to 8 minutes (approx. 4.5 km) from Chandani Chowk Metro Station and Kothrud flyover, connected via wide 6-lane Paud Road. This provides seamless metro access to Deccan Gymkhana, Shivajinagar, and Hinjewadi.',
   },
   {
     q: 'Can NRIs (Non-Resident Indians) buy NA bungalow plots or flats in Pune?',
@@ -32,37 +44,25 @@ const FAQS = [
     a: 'SKYi Manas Lake Plotting Project at Bhukum, Paud Road, Pune offers luxury NA villa plots set against a serene lake backdrop. The plots come with PMRDA sanctioning, 100% clear title legal status, underground water, electricity & fiber optic internet lines, wide internal concrete roads, street lighting, and gated security access.',
   },
   {
-    q: 'Why invest in NA bungalow plots in Bhukum and near Chandani Chowk Pune?',
-    a: 'Bhukum on Paud Road is West Pune\'s fastest growing luxury residential corridor, positioned right next to Bavdhan, Chandani Chowk flyover, and Kothrud. Owning an NA bungalow plot here provides rapid land value appreciation, freedom to construct bespoke multi-story villas, and proximity to Hinjawadi IT Park while enjoying clean air near Manas Lake and the Sahyadri Hills.',
-  },
-  {
-    q: 'What BHK options are available across Skyi projects in Pune?',
-    a: 'Skyi Developers offers a wide range across all projects: 1 BHK (Songbirds, Bhugaon), 2 BHK (Manas Lake — Bavdhan/Bhukum; Star City — Dhayari), 3 BHK (Songbirds — Bhugaon; Manas Lake — Bavdhan; Star City — Dhayari), and 4 BHK (Songbirds — Bhugaon). NA Bungalow Plots are also launching at Manas Lake, Bhukum.',
+    q: 'Why invest in NA bungalow plots in Bhukum, Bhugaon, and near Chandani Chowk Pune?',
+    a: 'Bhukum and Bhugaon on Paud Road represent West Pune\'s fastest growing luxury residential corridor, positioned right next to Bavdhan, Chandani Chowk flyover, and Kothrud. Owning an NA bungalow plot here provides rapid land value appreciation, freedom to construct bespoke multi-story villas, and proximity to Hinjawadi IT Park while enjoying clean air near Manas Lake and the Sahyadri Hills.',
   },
   {
     q: 'Is Skyi Developers RERA registered and certified?',
-    a: 'Yes, Skyi Developers is fully RERA registered in Maharashtra. All projects — Skyi Songbirds (Bhugaon), SKYi Manas Lake (Bavdhan/Bhukum) and Skyi Star City (Dhayari) — are RERA-approved, ensuring complete transparency and legal safety for home buyers in Pune. Manas Lake additionally holds IGBC Platinum and CRISIL certifications.',
-  },
-  {
-    q: 'What are the best flats near Kothrud or NDA Pune?',
-    a: 'Skyi Songbirds at Bhugaon is the best luxury residential option near Kothrud and NDA, Pune. Located just 10 minutes from Kothrud and adjacent to the 7,000-acre NDA forest on Paud Road, it offers 1 BHK, 3 BHK and 4 BHK premium residences with the Poona Western Club, Sports Academies and a Zero Waste Campus.',
+    a: 'Yes, Skyi Developers is fully RERA registered in Maharashtra. All projects — Skyi Songbirds (Bhugaon), SKYi Manas Lake (Bavdhan/Bhukum), SKYi Park (Baner), SKYi Aura Heights (Bhugaon) and Skyi Star City (Dhayari) — are RERA-approved, ensuring complete transparency and legal safety for home buyers in Pune.',
   },
   {
     q: 'How many years of experience does Skyi Developers have in Pune?',
     a: 'Skyi Developers has over 20 years of experience in premium residential real estate development in Pune since 2004. We have delivered 23+ projects, 7,000+ homes, earned 150+ awards, and have 30,000+ happy residents living in our communities across West and South Pune.',
-  },
-  {
-    q: 'What is the contact number and office address for Skyi Developers Pune?',
-    a: 'Skyi Developers office: Skymark One, Balewadi, Pune — 411045, Maharashtra. Phone: +91 20 6614 3000. Email: info@skyidevelopers.com. Office hours: Monday–Saturday, 10:00 AM to 7:00 PM.',
   },
 ];
 
 /* ─── Location Data ─── */
 const LOCATIONS = [
   {
-    project: 'Skyi Songbirds',
-    area: 'Bhugaon, Pune',
-    config: '1, 3 & 4 BHK Luxury Flats',
+    project: 'Skyi Songbirds & Tigers Nest',
+    area: 'Bhugaon, Paud Road, Pune',
+    config: '1, 3 & 4 BHK Luxury Flats & Hillside Homes',
     acres: '45+',
     status: 'Ongoing / Under Construction',
     nearBy: 'Kothrud (10 mins), Bavdhan, Paud Road, NDA Forest',
@@ -78,15 +78,6 @@ const LOCATIONS = [
     color: '#43e97b',
   },
   {
-    project: 'Skyi Star City',
-    area: 'Dhayari, Pune',
-    config: '2 & 3 BHK Homes',
-    acres: '20',
-    status: 'Delivered',
-    nearBy: 'DSK Vishwa, Sinhagad Road, Katraj Bypass',
-    color: 'var(--accent-gold)',
-  },
-  {
     project: 'SKYi Manas Lake NA Plots',
     area: 'Manas Lake Campus, Bhukum, Paud Road, Pune',
     config: 'NA Villa Plots (1,500 – 5,000+ sq.ft.)',
@@ -94,6 +85,24 @@ const LOCATIONS = [
     status: 'Launching 2025',
     nearBy: 'Chandani Chowk (6 mins), Kothrud (12 mins), Pirangut',
     color: '#3b82f6',
+  },
+  {
+    project: 'SKYi Park & SKYi Iris',
+    area: 'Baner & Bavdhan Corridor, Pune',
+    config: '2 & 3 BHK Luxury Residences',
+    acres: 'Boutique Prime Urban',
+    status: 'Delivered / Ongoing',
+    nearBy: 'Hinjewadi IT Hub, Pashan, Sus, Aundh',
+    color: 'var(--accent-4)',
+  },
+  {
+    project: 'Skyi Star City',
+    area: 'Dhayari, Pune',
+    config: '2 & 3 BHK Homes',
+    acres: '20',
+    status: 'Delivered',
+    nearBy: 'DSK Vishwa, Sinhagad Road, Katraj Bypass',
+    color: 'var(--accent-gold)',
   },
 ];
 
@@ -185,19 +194,17 @@ export default function SEOContent() {
             <span className="section-subtitle">All Projects</span>
             <h2 className="section-title seo-h2">
               Skyi Developments<br />
-              <span className="gradient-text">Across Pune</span>
+              <span className="gradient-text">Across Pune Footprint</span>
             </h2>
             <div className="glow-line" style={{ marginTop: 16, marginBottom: 28 }} />
 
             <p className="seo-intro">
-              Skyi Developers is one of Pune's most trusted and premium residential real estate developers,
-              with over <strong>20 years</strong> of experience building thoughtfully designed communities
-              across West and South Pune. From luxury 3 &amp; 4 BHK flats near Kothrud at{' '}
-              <strong>Skyi Songbirds, Bhugaon</strong>, to the IGBC Platinum-certified lakeside township
-              of <strong>SKYi Manas Lake at Bavdhan / Bhukum</strong>, the zero-wastage integrated community
-              of <strong>Skyi Star City at Dhayari</strong>, and the upcoming exclusive{' '}
-              <strong>SKYi Manas Lake NA Bungalow Plots at Bhukum, Paud Road (near Chandani Chowk)</strong> — every Skyi project is built
-              around life, shaped through design.
+              Skyi Developers (also known as <strong>SKYi Developers</strong>) is one of Pune's most trusted and premium real estate developers,
+              with over <strong>20 years</strong> of design excellence. SKYi's footprint spans prime West &amp; South Pune corridors including{' '}
+              <strong>Bhugaon, Bhukum, Bavdhan, Baner, Chandani Chowk, Kothrud, Paud Road, Mulshi, and Dhayari</strong>. Key official developments feature{' '}
+              <strong>Skyi Songbirds, SKYi Tigers Nest, SKYi PWC Towers, SKYi Aura Heights</strong> at Bhugaon;{' '}
+              <strong>SKYi Manas Lake &amp; SKYi Manas Lake NA Bungalow Plots</strong> at Bhukum / Bavdhan;{' '}
+              <strong>SKYi Park &amp; SKYi Iris</strong> at Baner; and <strong>Skyi Star City</strong> at Dhayari.
             </p>
           </motion.div>
 
@@ -225,7 +232,7 @@ export default function SEOContent() {
                   <div className="lc-meta">
                     <span>{loc.config}</span>
                     <span className="lc-dot" />
-                    <span>{loc.acres} Acres</span>
+                    <span>{loc.acres}</span>
                   </div>
                   <p className="lc-nearby">Near: {loc.nearBy}</p>
                 </div>
@@ -245,7 +252,7 @@ export default function SEOContent() {
             <span className="section-subtitle">FAQ</span>
             <h2 className="section-title seo-h2">
               Common Questions<br />
-              <span className="gradient-text">About Skyi</span>
+              <span className="gradient-text">About SKYi Projects</span>
             </h2>
             <div className="glow-line" style={{ marginTop: 16, marginBottom: 28 }} />
           </motion.div>
@@ -337,7 +344,7 @@ export default function SEOContent() {
         <div className="na-guide-header">
           <div className="guide-badge"><FileCheck size={16} /> PMRDA &amp; RERA Guide</div>
           <h3>Pune NA Bungalow Plots Legal &amp; Infrastructure Checklist</h3>
-          <p>Key legal parameters to verify before investing in Non-Agricultural bungalow plots in Bhukum, Bhugaon, Bavdhan, or Paud Road.</p>
+          <p>Key legal parameters to verify before investing in Non-Agricultural bungalow plots in Bhukum, Bhugaon, Bavdhan, Baner, or Paud Road.</p>
         </div>
 
         <div className="na-checklist-grid">
@@ -353,24 +360,17 @@ export default function SEOContent() {
         </div>
       </motion.div>
 
-      {/* ── Keyword-dense hidden-from-layout but visible SEO paragraph ── */}
+      {/* ── Master Keyword Injection Block (Google Search Guidelines Compliant) ── */}
       <div className="seo-keywords-block">
         <p>
-          <strong>Skyi Developers</strong> (also known as <strong>SKYi Developers</strong>) is Pune, Maharashtra's
-          leading premium residential real estate builder and developer, offering luxury apartments, flats, townships
-          and NA plots across multiple prime locations in Pune. Key projects include:{' '}
-          <strong>Skyi Songbirds Bhugaon Pune</strong> (1 BHK, 3 BHK, 4 BHK near Kothrud and NDA Forest),{' '}
-          <strong>SKYi Manas Lake Bavdhan Bhukum Paud Road Pune</strong> (2 BHK, 3 BHK, IGBC Platinum Certified),{' '}
-          <strong>Skyi Star City Dhayari Pune</strong> (2 BHK, 3 BHK near DSK Vishwa), and{' '}
-          <strong>SKYi Manas Lake NA Bungalow Plots Bhukum Paud Road Pune 2025</strong>. All projects are{' '}
-          <strong>RERA registered</strong> in Maharashtra and <strong>PMRDA sanctioned</strong>. Contact Skyi Developers at{' '}
-          <strong>+91 20 6614 3000</strong> or visit the office at{' '}
-          <strong>Skymark One, Balewadi, Pune 411045</strong>. Search terms:{' '}
-          NRI real estate investment Pune, buy flat Pune from Dubai UAE, NRI property investment Pune USA UK, NA bungalow plots Pune, NA plots Bhukum, NA plots Bhugaon, NA plots Paud Road, NA plots near Chandani Chowk,
-          NA plots near Kothrud, PMRDA approved NA plots Pune, clear title NA plots Pune, 2 BHK Bavdhan, 3 BHK Bhugaon, 4 BHK Kothrud area,
-          luxury apartments near NDA Pune, best builder Pune, premium developer Pune, township Pune, gated community Pune, eco-friendly flats Pune,
-          sustainable apartments Pune, NA plots Pune 2025, residential plots Bhukum, bungalow plots Bavdhan, plot rates Bhukum Pune,
-          Skyi Developers review, Skyi projects price list, Skyi Songbirds review, Manas Lake review, Star City Dhayari review, new property launch Pune 2025.
+          <strong>Skyi Developers</strong> (also known as <strong>SKYi Developers</strong>) is Pune, Maharashtra's premier real estate builder and developer. Official footprint includes:
+          <strong>Skyi Songbirds Bhugaon</strong>, <strong>SKYi Tigers Nest Bhugaon</strong>, <strong>SKYi PWC Towers</strong>, <strong>SKYi PWC Towers Hillside</strong>, <strong>SKYi Aura Heights Bhugaon Bavdhan</strong>, <strong>SKYi Manas Lake Bhukum Bavdhan</strong>, <strong>SKYi Manas Lake NA Bungalow Plots Bhukum Paud Road</strong>, <strong>SKYi Park Baner</strong>, <strong>SKYi Iris Baner Bavdhan</strong>, <strong>SKYi Five Racecourse</strong>, <strong>SKYi Five Maidan</strong>, <strong>SKYi Five Baner</strong>, <strong>SKYi Nilay</strong>, <strong>SKYi Aquila</strong>, <strong>SKYi Seher Towers</strong>, and <strong>Skyi Star City Dhayari</strong>.
+        </p>
+        <p style={{ marginTop: '8px' }}>
+          <strong>Target Micro-Market Keywords</strong>: NA bungalow plots Bhugaon, NA plots Bhukum, NA plots Bavdhan, NA plots Baner, NA plots Chandani Chowk, NA plots Kothrud, NA plots Paud Road, NA plots Mulshi, NA plots Pirangut, NA plots Sus, NA plots Pashan, NA plots Hinjewadi, NA plots Balewadi, NA plots Aundh, NA plots Wakad, NA plots Warje, NA plots Karve Nagar, NA plots Deccan, NA plots Shivajinagar.
+        </p>
+        <p style={{ marginTop: '8px' }}>
+          <strong>Buyer-Intent &amp; Hinglish Search Queries</strong>: buy NA plot pune, buy bungalow plot bhugaon, buy plot in bhukum, buy villa plot bavdhan, residential land for sale pune, best NA plots pune, NA plots under 50 lakhs pune, NA plots under 75 lakhs pune, NA plots under 1 crore pune, pune madhe plot, pune plot for sale, pune NA plot sale, bhugaon plot, bhukum NA plot, bavdhan bungalow plot, ghar bandhnya sathi plot pune, bungalow bandhnya sathi plot pune, gharasathi plot pune, swatacha bungalow pune plot, investment sathi plot pune, pune madhe jamin.
         </p>
       </div>
     </section>
