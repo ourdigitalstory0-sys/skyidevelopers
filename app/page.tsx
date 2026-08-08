@@ -8,6 +8,8 @@ import Metrics from '../components/Metrics';
 import VideoSection from '../components/VideoSection';
 import Portfolio from '../components/Portfolio';
 import MortgageCalculator from '../components/MortgageCalculator';
+import PlotEstimator from '../components/PlotEstimator';
+import VirtualTourGallery from '../components/VirtualTourGallery';
 import Connectivity from '../components/Connectivity';
 import Testimonials from '../components/Testimonials';
 import SEOContent from '../components/SEOContent';
@@ -107,6 +109,12 @@ function HomeContent() {
         onOpenSiteVisit={handleOpenVisit}
         onOpenFloorPlan={handleOpenFloorPlan}
       />
+
+      {/* PMRDA NA Plot Villa Construction Cost & FSI Estimator */}
+      <PlotEstimator onBookSiteVisit={handleOpenVisit} />
+
+      {/* 360° Virtual Tour & Drone Sightseeing Gallery */}
+      <VirtualTourGallery onBookSiteVisit={handleOpenVisit} />
 
       {/* Home Loan & EMI Calculator */}
       <MortgageCalculator onBookSiteVisit={() => handleOpenVisit()} />

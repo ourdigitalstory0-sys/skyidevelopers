@@ -1,0 +1,271 @@
+/* ════════════════════════════════════════
+   NA PLOT VILLA ESTIMATOR STYLES
+════════════════════════════════════════ */
+.estimator-section {
+  padding: 100px 24px;
+  position: relative;
+  background: var(--color-bg-2);
+}
+
+.estimator-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.estimator-subtitle {
+  max-width: 750px;
+  margin: 18px auto 0 auto;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.estimator-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 50px;
+}
+
+@media (max-width: 1024px) {
+  .estimator-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.estimator-controls,
+.estimator-results {
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.est-control-group {
+  margin-bottom: 2rem;
+}
+
+.est-control-group:last-child {
+  margin-bottom: 0;
+}
+
+.est-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.est-label-row label,
+.est-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.est-val-highlight {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-3);
+  background: rgba(79, 195, 247, 0.12);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  border: 1px solid rgba(79, 195, 247, 0.3);
+}
+
+.est-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
+  accent-color: var(--accent-1);
+}
+
+.est-range-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.est-btn-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.est-select-btn {
+  flex: 1;
+  min-width: 100px;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-secondary);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.est-select-btn.active,
+.est-select-btn:hover {
+  background: rgba(255, 107, 53, 0.18);
+  border-color: var(--accent-1);
+  color: #ffffff;
+}
+
+.spec-tier-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.spec-tier-card {
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s ease;
+}
+
+.spec-tier-card:hover,
+.spec-tier-card.active {
+  background: rgba(255, 107, 53, 0.12);
+  border-color: var(--accent-1);
+}
+
+.st-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.st-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.st-rate {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+}
+
+.st-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Results box */
+.estimator-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(160deg, rgba(13, 18, 51, 0.9) 0%, rgba(7, 11, 31, 0.95) 100%);
+  border: 1px solid rgba(255, 107, 53, 0.25);
+}
+
+.est-results-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.est-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255, 107, 53, 0.15);
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  color: var(--accent-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.est-results-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.est-result-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.est-res-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.res-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.res-val {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.res-val.highlight {
+  color: var(--accent-3);
+}
+
+.est-total-box {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(171, 71, 188, 0.12));
+  border: 1px solid rgba(255, 107, 53, 0.35);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.total-title {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent-2);
+  margin-bottom: 0.4rem;
+}
+
+.total-amount {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.total-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.est-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.est-cta-btn {
+  width: 100%;
+  justify-content: center;
+}
