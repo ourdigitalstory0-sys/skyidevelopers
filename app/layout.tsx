@@ -173,6 +173,52 @@ const jsonLdSchema = {
       ]
     },
     {
+      "@type": "WebSite",
+      "@id": "https://skyidevelopers.in/#website",
+      "url": "https://skyidevelopers.in/",
+      "name": "Skyi Developers Pune",
+      "description": "Official Website of SKYi Developers — PMRDA NA Bungalow Plots Bhukum & Premium Townships Pune",
+      "publisher": { "@id": "https://skyidevelopers.in/#organization" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://skyidevelopers.in/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://skyidevelopers.in/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are SKYi Manas Lake NA Bungalow Plots PMRDA approved with clear title?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, SKYi Manas Lake NA Bungalow Plots in Bhukum (near Bavdhan) are 100% PMRDA approved with clear title certificates, individual 7/12 extract demarcation, FSI permissions up to 1.5+, and bank home loan sanction from nationalized banks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the location advantage of Skyi Songbirds Bhugaon & SKYi NA Plots Bhukum?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Skyi Songbirds and SKYi NA Plots Bhukum are strategically located just 10-15 minutes from Chandani Chowk and Kothrud along the 6-lane Paud Road expressway, providing seamless access to Hinjewadi IT Park and Pune-Bangalore Highway."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What amenities are included in SKYi IGBC Platinum Certified Townships?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SKYi Townships offer 70%+ open green space, organic waste processing, solar electricity grids, 24/7 security, clubhouse, infinity swimming pools, sports arenas, and bird sanctuaries."
+          }
+        }
+      ]
+    },
+    {
       "@type": "Place",
       "@id": "https://skyidevelopers.in/#location-bhugaon",
       "name": "Skyi Songbirds & SKYi Tigers Nest Bhugaon",

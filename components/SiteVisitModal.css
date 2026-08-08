@@ -15,14 +15,14 @@
 }
 
 .site-visit-modal {
-  background: rgba(18, 24, 38, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0b1329;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 20px;
   width: 100%;
   max-width: 580px;
   padding: 2.5rem;
   position: relative;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(59, 130, 246, 0.3);
   color: #f8fafc;
 }
 
@@ -117,9 +117,9 @@
 }
 
 .form-group label {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #cbd5e1;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #f1f5f9;
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -127,8 +127,8 @@
 
 .form-group input,
 .form-group select {
-  background: rgba(30, 41, 59, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 10px;
   padding: 0.75rem 1rem;
   color: #ffffff;
@@ -137,10 +137,16 @@
   transition: all 0.2s ease;
 }
 
+.form-group input::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
 .form-group input:focus,
 .form-group select:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25);
+  background: #1e293b;
 }
 
 .form-group select option {
