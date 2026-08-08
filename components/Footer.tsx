@@ -25,9 +25,11 @@ const PROJECTS_LIST = [
   { value: 'other',      label: 'Other / General Enquiry' },
 ];
 
-type Fields = { name: string; email: string; phone: string; project: string; message: string };
+interface FooterProps {
+  onOpenPrivacyModal?: () => void;
+}
 
-export default function Footer() {
+export default function Footer({ onOpenPrivacyModal }: FooterProps) {
   const [form,      setForm]      = useState<Fields>({ name: '', email: '', phone: '', project: '', message: '' });
   const [focused,   setFocused]   = useState<string | null>(null);
   const [errorMsg,  setErrorMsg]  = useState<string | null>(null);
@@ -286,6 +288,15 @@ export default function Footer() {
             </p>
           </div>
           <div className="fb-right">
+            {onOpenPrivacyModal && (
+              <button
+                type="button"
+                className="fb-privacy-btn"
+                onClick={onOpenPrivacyModal}
+              >
+                Privacy &amp; RERA Disclosures
+              </button>
+            )}
             <a href="#home">Back to Top ↑</a>
           </div>
         </div>

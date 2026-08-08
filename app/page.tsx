@@ -16,6 +16,7 @@ import SEOContent from '../components/SEOContent';
 import Footer from '../components/Footer';
 import SiteVisitModal from '../components/SiteVisitModal';
 import FloorPlanModal from '../components/FloorPlanModal';
+import PrivacyPolicyModal from '../components/PrivacyPolicyModal';
 import FloatingActions from '../components/FloatingActions';
 import OfflineBanner from '../components/OfflineBanner';
 
@@ -29,6 +30,8 @@ function HomeContent() {
 
   const [isFloorModalOpen, setIsFloorModalOpen] = useState(false);
   const [floorProjectTitle, setFloorProjectTitle] = useState<string | undefined>();
+
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
 
   const handleOpenVisit = (projectName?: string) => {
     setVisitDefaultProject(projectName);
@@ -132,7 +135,7 @@ function HomeContent() {
       <SEOContent />
 
       {/* Footer */}
-      <Footer />
+      <Footer onOpenPrivacyModal={() => setIsPrivacyModalOpen(true)} />
 
       {/* Interactive Modals */}
       <SiteVisitModal
@@ -146,6 +149,11 @@ function HomeContent() {
         onClose={() => setIsFloorModalOpen(false)}
         projectTitle={floorProjectTitle}
         onBookVisit={() => handleOpenVisit(floorProjectTitle)}
+      />
+
+      <PrivacyPolicyModal
+        isOpen={isPrivacyModalOpen}
+        onClose={() => setIsPrivacyModalOpen(false)}
       />
 
       {/* Floating Quick Action Buttons */}
