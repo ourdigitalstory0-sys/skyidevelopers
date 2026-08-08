@@ -6,9 +6,13 @@ import { WifiOff } from 'lucide-react';
 import './OfflineBanner.css';
 
 export default function OfflineBanner() {
-  const [isOffline, setIsOffline] = useState(!navigator.onLine);
+  const [isOffline, setIsOffline] = useState(false);
 
   useEffect(() => {
+    if (typeof window !== 'undefined' && typeof navigator !== 'undefined') {
+      setIsOffline(!navigator.onLine);
+    }
+
     const handleOnline = () => setIsOffline(false);
     const handleOffline = () => setIsOffline(true);
 

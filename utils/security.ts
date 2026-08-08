@@ -28,6 +28,7 @@ export function sanitizeInput(input: string): string {
  */
 export const safeLocalStorage = {
   getItem(key: string): string | null {
+    if (typeof window === 'undefined') return null;
     try {
       return localStorage.getItem(key);
     } catch {
@@ -35,6 +36,7 @@ export const safeLocalStorage = {
     }
   },
   setItem(key: string, value: string): boolean {
+    if (typeof window === 'undefined') return false;
     try {
       localStorage.setItem(key, value);
       return true;
@@ -43,6 +45,7 @@ export const safeLocalStorage = {
     }
   },
   removeItem(key: string): boolean {
+    if (typeof window === 'undefined') return false;
     try {
       localStorage.removeItem(key);
       return true;
@@ -57,6 +60,7 @@ export const safeLocalStorage = {
  */
 export const safeSessionStorage = {
   getItem(key: string): string | null {
+    if (typeof window === 'undefined') return null;
     try {
       return sessionStorage.getItem(key);
     } catch {
@@ -64,6 +68,7 @@ export const safeSessionStorage = {
     }
   },
   setItem(key: string, value: string): boolean {
+    if (typeof window === 'undefined') return false;
     try {
       sessionStorage.setItem(key, value);
       return true;
@@ -72,6 +77,7 @@ export const safeSessionStorage = {
     }
   },
   removeItem(key: string): boolean {
+    if (typeof window === 'undefined') return false;
     try {
       sessionStorage.removeItem(key);
       return true;
