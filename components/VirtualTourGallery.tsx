@@ -6,7 +6,7 @@ import { Play, Eye, X, MapPin, Calendar } from 'lucide-react';
 import './VirtualTourGallery.css';
 
 interface VirtualTourProps {
-  onOpenSiteVisit: (projectName?: string) => void;
+  onBookSiteVisit: (projectName?: string) => void;
 }
 
 interface TourMedia {

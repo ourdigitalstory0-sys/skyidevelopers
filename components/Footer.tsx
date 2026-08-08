@@ -25,6 +25,8 @@ const PROJECTS_LIST = [
   { value: 'other',      label: 'Other / General Enquiry' },
 ];
 
+type Fields = { name: string; email: string; phone: string; project: string; message: string };
+
 interface FooterProps {
   onOpenPrivacyModal?: () => void;
 }
