@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://skyidevelopers.com/sitemap.xml',
+    sitemap: 'https://skyidevelopers.in/sitemap.xml',
   };
 }

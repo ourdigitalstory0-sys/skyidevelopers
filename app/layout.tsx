@@ -20,18 +20,18 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Skyi Developers' }],
   publisher: 'Skyi Developers',
-  metadataBase: new URL('https://skyidevelopers.com'),
+  metadataBase: new URL('https://skyidevelopers.in'),
   alternates: {
-    canonical: 'https://skyidevelopers.com/',
+    canonical: 'https://skyidevelopers.in/',
     languages: {
-      'en-IN': 'https://skyidevelopers.com/',
-      'en': 'https://skyidevelopers.com/',
-      'x-default': 'https://skyidevelopers.com/',
+      'en-IN': 'https://skyidevelopers.in/',
+      'en': 'https://skyidevelopers.in/',
+      'x-default': 'https://skyidevelopers.in/',
     },
   },
   openGraph: {
     type: 'website',
-    url: 'https://skyidevelopers.com/',
+    url: 'https://skyidevelopers.in/',
     title: 'Skyi Developers Pune | Luxury Residences & PMRDA NA Bungalow Plots',
     description: 'Explore 23+ delivered projects, 7000+ homes, IGBC Platinum certified townships in Pune.',
     siteName: 'Skyi Developers',
@@ -68,11 +68,11 @@ const jsonLdSchema = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://skyidevelopers.com/#organization",
+      "@id": "https://skyidevelopers.in/#organization",
       "name": "Skyi Developers",
       "alternateName": ["SKYi Developers", "Skyi Developer Pune", "SKYi Properties"],
-      "url": "https://skyidevelopers.com/",
-      "logo": "https://skyidevelopers.com/logo-white.svg",
+      "url": "https://skyidevelopers.in/",
+      "logo": "https://skyidevelopers.in/logo-white.svg",
       "telephone": "+91-20-66143000",
       "email": "info@skyidevelopers.com",
       "foundingDate": "2004",
@@ -87,9 +87,9 @@ const jsonLdSchema = {
     },
     {
       "@type": "RealEstateAgent",
-      "@id": "https://skyidevelopers.com/#agent",
+      "@id": "https://skyidevelopers.in/#agent",
       "name": "Skyi Developers Pune",
-      "image": "https://skyidevelopers.com/songbirds-1.webp",
+      "image": "https://skyidevelopers.in/songbirds-1.webp",
       "telephone": "+91-20-66143000",
       "priceRange": "₹45 Lakhs - ₹2.5 Crores",
       "address": {
