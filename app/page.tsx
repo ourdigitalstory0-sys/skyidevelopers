@@ -5,7 +5,6 @@ import ErrorBoundary from '../components/ErrorBoundary';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Metrics from '../components/Metrics';
-import NRICurrencyToggle from '../components/NRICurrencyToggle';
 import VideoSection from '../components/VideoSection';
 import Portfolio from '../components/Portfolio';
 import InteractiveMasterPlan from '../components/InteractiveMasterPlan';
@@ -23,14 +22,10 @@ import PrivacyPolicyModal from '../components/PrivacyPolicyModal';
 import AIMatchmakerModal from '../components/AIMatchmakerModal';
 import FloatingActions from '../components/FloatingActions';
 import OfflineBanner from '../components/OfflineBanner';
-import { CurrencyCode } from '../utils/currency';
 
 function HomeContent() {
   const dotRef  = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
-
-  /* Currency State */
-  const [currency, setCurrency] = useState<CurrencyCode>('INR');
 
   /* Modal States */
   const [isVisitModalOpen, setIsVisitModalOpen] = useState(false);
@@ -112,9 +107,6 @@ function HomeContent() {
 
       {/* Hero Header */}
       <Hero onOpenSiteVisit={() => handleOpenVisit()} />
-
-      {/* NRI Multi-Currency Toggle Bar */}
-      <NRICurrencyToggle selectedCurrency={currency} onCurrencyChange={setCurrency} />
 
       {/* Metrics & Statistics */}
       <Metrics />
