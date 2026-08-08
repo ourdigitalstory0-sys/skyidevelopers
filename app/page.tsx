@@ -5,8 +5,10 @@ import ErrorBoundary from '../components/ErrorBoundary';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Metrics from '../components/Metrics';
+import NRICurrencyToggle from '../components/NRICurrencyToggle';
 import VideoSection from '../components/VideoSection';
 import Portfolio from '../components/Portfolio';
+import InteractiveMasterPlan from '../components/InteractiveMasterPlan';
 import MortgageCalculator from '../components/MortgageCalculator';
 import PlotEstimator from '../components/PlotEstimator';
 import VirtualTourGallery from '../components/VirtualTourGallery';
@@ -18,12 +20,17 @@ import Footer from '../components/Footer';
 import SiteVisitModal from '../components/SiteVisitModal';
 import FloorPlanModal from '../components/FloorPlanModal';
 import PrivacyPolicyModal from '../components/PrivacyPolicyModal';
+import AIMatchmakerModal from '../components/AIMatchmakerModal';
 import FloatingActions from '../components/FloatingActions';
 import OfflineBanner from '../components/OfflineBanner';
+import { CurrencyCode } from '../utils/currency';
 
 function HomeContent() {
   const dotRef  = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
+
+  /* Currency State */
+  const [currency, setCurrency] = useState<CurrencyCode>('INR');
 
   /* Modal States */
   const [isVisitModalOpen, setIsVisitModalOpen] = useState(false);
@@ -33,6 +40,7 @@ function HomeContent() {
   const [floorProjectTitle, setFloorProjectTitle] = useState<string | undefined>();
 
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+  const [isAiMatchmakerOpen, setIsAiMatchmakerOpen] = useState(false);
 
   const handleOpenVisit = (projectName?: string) => {
     setVisitDefaultProject(projectName);
@@ -105,6 +113,9 @@ function HomeContent() {
       {/* Hero Header */}
       <Hero onOpenSiteVisit={() => handleOpenVisit()} />
 
+      {/* NRI Multi-Currency Toggle Bar */}
+      <NRICurrencyToggle selectedCurrency={currency} onCurrencyChange={setCurrency} />
+
       {/* Metrics & Statistics */}
       <Metrics />
 
@@ -113,6 +124,9 @@ function HomeContent() {
         onOpenSiteVisit={handleOpenVisit}
         onOpenFloorPlan={handleOpenFloorPlan}
       />
+
+      {/* 2D/3D Interactive Master Layout Visualizer */}
+      <InteractiveMasterPlan />
 
       {/* PMRDA NA Plot Villa Construction Cost & FSI Estimator */}
       <PlotEstimator onBookSiteVisit={handleOpenVisit} />
@@ -158,6 +172,12 @@ function HomeContent() {
       <PrivacyPolicyModal
         isOpen={isPrivacyModalOpen}
         onClose={() => setIsPrivacyModalOpen(false)}
+      />
+
+      <AIMatchmakerModal
+        isOpen={isAiMatchmakerOpen}
+        onClose={() => setIsAiMatchmakerOpen(false)}
+        onSelectProject={(project) => handleOpenVisit(project)}
       />
 
       {/* Floating Quick Action Buttons */}
