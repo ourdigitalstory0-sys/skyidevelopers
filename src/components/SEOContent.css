@@ -1,0 +1,425 @@
+/* ══════════════════════════════════════
+   SEO CONTENT SECTION
+   (FAQ accordion + project location cards)
+══════════════════════════════════════ */
+
+.seo-section {
+  position: relative;
+  padding: 100px 40px 80px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(79,195,247,0.04) 30%,
+    rgba(171,71,188,0.04) 70%,
+    transparent 100%
+  );
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ─── Trust badge row ─── */
+.seo-trust-row {
+  max-width: 1200px;
+  margin: 0 auto 72px;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 36px;
+  border-right: 1px solid rgba(255,255,255,0.07);
+  flex: 1;
+  min-width: 180px;
+}
+.trust-badge:last-child { border-right: none; }
+
+.trust-icon {
+  color: var(--accent-1);
+  flex-shrink: 0;
+}
+
+.trust-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+.trust-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* ─── Two-column inner layout ─── */
+.seo-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.seo-h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); }
+
+.seo-intro {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 32px;
+}
+.seo-intro strong { color: var(--text-primary); font-weight: 700; }
+
+/* ─── Location cards ─── */
+.location-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.location-card {
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+.location-card:hover {
+  border-color: var(--loc-color);
+  box-shadow: 0 0 24px rgba(255,107,53,0.1);
+}
+
+.lc-accent {
+  width: 4px;
+  flex-shrink: 0;
+  background: var(--loc-color);
+  box-shadow: 0 0 12px var(--loc-color);
+}
+
+.lc-body {
+  padding: 16px 20px;
+  flex: 1;
+}
+
+.lc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 5px;
+  gap: 10px;
+}
+
+.lc-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+
+.lc-status {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.07);
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.lc-area {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--accent-1);
+  margin-bottom: 7px;
+  font-weight: 600;
+}
+
+.lc-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.lc-dot {
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: var(--text-muted);
+}
+
+.lc-nearby {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ─── FAQ accordion ─── */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-item {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: border-color 0.25s;
+}
+.faq-item.open {
+  border-color: rgba(255,107,53,0.3);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  line-height: 1.5;
+  cursor: none;
+  transition: color 0.2s;
+}
+.faq-question:hover { color: var(--accent-2); }
+.faq-item.open .faq-question { color: var(--accent-1); }
+
+.faq-chevron {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.faq-item.open .faq-chevron { color: var(--accent-1); }
+
+.faq-answer {
+  overflow: hidden;
+}
+.faq-answer p {
+  padding: 0 20px 18px;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.78;
+}
+
+/* ─── Keyword block (visible, white-hat) ─── */
+.seo-keywords-block {
+  max-width: 1300px;
+  margin: 64px auto 0;
+  padding: 28px 36px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+}
+.seo-keywords-block p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+.seo-keywords-block strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* ─── Global NRI Hub Section ─── */
+.nri-hub-section {
+  max-width: 1300px;
+  margin: 4rem auto 0 auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(30, 58, 138, 0.4) 0%, rgba(18, 24, 38, 0.8) 100%);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.nri-hub-header {
+  margin-bottom: 2rem;
+}
+
+.nri-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.12);
+  padding: 0.35rem 0.8rem;
+  border-radius: 100px;
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  margin-bottom: 0.75rem;
+}
+
+.nri-hub-header h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+.nri-hub-header p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  max-width: 800px;
+}
+
+.nri-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.nri-benefit-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: all 0.25s ease;
+}
+
+.nri-benefit-card:hover {
+  border-color: rgba(96, 165, 250, 0.4);
+  transform: translateY(-4px);
+}
+
+.nri-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(96, 165, 250, 0.15);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  color: #60a5fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nri-benefit-card h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.nri-benefit-card p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.55;
+}
+
+/* ─── Pune NA Plots Guide Section ─── */
+.na-guide-section {
+  max-width: 1300px;
+  margin: 4rem auto 0 auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: rgba(18, 24, 38, 0.7);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.na-guide-header {
+  margin-bottom: 2rem;
+}
+
+.guide-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 0.35rem 0.8rem;
+  border-radius: 100px;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  margin-bottom: 0.75rem;
+}
+
+.na-guide-header h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+.na-guide-header p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.na-checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.na-check-card {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.25rem;
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  transition: border-color 0.2s ease;
+}
+
+.na-check-card:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.na-check-icon {
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.na-check-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.na-check-card p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1100px) {
+  .seo-inner { grid-template-columns: 1fr; gap: 56px; }
+  .seo-trust-row { justify-content: flex-start; }
+}
+@media (max-width: 600px) {
+  .seo-section { padding: 70px 24px 60px; }
+  .trust-badge { padding: 14px 20px; min-width: 140px; }
+  .seo-trust-row { margin-bottom: 50px; }
+  .seo-keywords-block { padding: 20px 20px; }
+}

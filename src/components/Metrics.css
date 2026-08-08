@@ -1,0 +1,139 @@
+/* ══════════════════════════════════════
+   METRICS
+══════════════════════════════════════ */
+
+.metrics {
+  position: relative;
+  padding: 120px 40px;
+  overflow: hidden;
+  background: linear-gradient(180deg, transparent 0%, rgba(255,107,53,0.04) 50%, transparent 100%);
+}
+
+/* Scanner sweep line */
+.metrics-scanner {
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,107,53,0.0) 15%,
+    rgba(255,107,53,0.8) 50%,
+    rgba(79,195,247,0.6) 65%,
+    transparent 100%
+  );
+  box-shadow: 0 0 24px rgba(255,107,53,0.6);
+  animation: scan-line 2.4s ease-in-out forwards;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Grid */
+.metrics-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Card */
+.metric-card {
+  position: relative;
+  border-radius: 24px;
+  padding: 44px 32px 40px;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: border-color 0.3s;
+}
+.metric-card:hover {
+  border-color: rgba(var(--card-color), 0.4);
+}
+
+/* Icon */
+.metric-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  margin: 0 auto 24px;
+  color: var(--card-color);
+  filter: drop-shadow(0 0 8px var(--card-color));
+  transition: transform 0.3s var(--ease-spring);
+}
+.metric-card:hover .metric-icon {
+  transform: scale(1.12) rotate(-5deg);
+}
+
+/* Number */
+.metric-number {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 3.4rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 12px;
+  color: var(--card-color);
+  text-shadow: 0 0 40px var(--card-color);
+  filter: drop-shadow(0 0 16px var(--card-color));
+}
+.metric-suffix {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 4px;
+  margin-left: 2px;
+  opacity: 0.85;
+}
+
+/* Label */
+.metric-label {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+}
+
+/* Glow overlay */
+.metric-glow {
+  position: absolute;
+  bottom: -30px; left: 50%;
+  transform: translateX(-50%);
+  width: 120px; height: 80px;
+  border-radius: 50%;
+  background: var(--card-color);
+  opacity: 0.12;
+  filter: blur(30px);
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.metric-card:hover .metric-glow { opacity: 0.25; }
+
+/* Accent line at card top */
+.metric-accent-line {
+  position: absolute;
+  top: 0; left: 20%; right: 20%;
+  height: 2px;
+  background: var(--card-color);
+  border-radius: 0 0 2px 2px;
+  opacity: 0.7;
+  box-shadow: 0 0 10px var(--card-color);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .metrics { padding: 80px 24px; }
+  .metrics-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .metric-card { padding: 32px 20px; }
+  .metric-number { font-size: 2.6rem; }
+}

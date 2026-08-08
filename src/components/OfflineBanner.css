@@ -1,0 +1,33 @@
+.offline-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  background: linear-gradient(90deg, #b91c1c 0%, #dc2626 100%);
+  color: #ffffff;
+  padding: 0.65rem 1rem;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.offline-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.offline-icon {
+  flex-shrink: 0;
+  animation: pulse-offline 2s infinite;
+}
+
+@keyframes pulse-offline {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
