@@ -4,7 +4,7 @@
  * errors and warnings tracked safely.
  */
 
-const isDev = import.meta.env.DEV;
+const isDev = process.env.NODE_ENV !== 'production';
 
 export const logger = {
   log(...args: unknown[]): void {
