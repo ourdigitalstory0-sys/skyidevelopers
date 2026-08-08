@@ -54,7 +54,8 @@ export default function Navbar({ onOpenVisitModal }: NavbarProps) {
     return () => observers.forEach(o => o.disconnect());
   }, []);
 
-  const scrollTo = (id: string) => {
+  const scrollTo = (id: string, e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setMobileOpen(false);
   };
@@ -77,7 +78,7 @@ export default function Navbar({ onOpenVisitModal }: NavbarProps) {
       >
         <div className="nav-container">
           {/* Logo */}
-          <a href="#home" className="logo" onClick={() => scrollTo('home')}>
+          <a href="#home" className="logo" onClick={(e) => scrollTo('home', e)}>
             <img src="/logo-white.svg" alt="Skyi Developers" style={{ height: '30px' }} />
           </a>
 
@@ -88,7 +89,7 @@ export default function Navbar({ onOpenVisitModal }: NavbarProps) {
                 key={link.name}
                 href={link.href}
                 className={`nav-link ${activeSection === link.id ? 'active' : ''}`}
-                onClick={() => scrollTo(link.id)}
+                onClick={(e) => scrollTo(link.id, e)}
                 initial={{ opacity: 0, y: -18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
@@ -155,7 +156,7 @@ export default function Navbar({ onOpenVisitModal }: NavbarProps) {
                 key={link.name}
                 href={link.href}
                 className={activeSection === link.id ? 'active' : ''}
-                onClick={() => scrollTo(link.id)}
+                onClick={(e) => scrollTo(link.id, e)}
                 initial={{ opacity: 0, x: -16 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.05 }}
