@@ -12,6 +12,7 @@ import PlotEstimator from '../components/PlotEstimator';
 import VirtualTourGallery from '../components/VirtualTourGallery';
 import Connectivity from '../components/Connectivity';
 import Testimonials from '../components/Testimonials';
+import ProgrammaticSEOSection from '../components/ProgrammaticSEOSection';
 import SEOContent from '../components/SEOContent';
 import Footer from '../components/Footer';
 import SiteVisitModal from '../components/SiteVisitModal';
@@ -130,6 +131,9 @@ function HomeContent() {
 
       {/* Customer Testimonials & Verified Reviews */}
       <Testimonials />
+
+      {/* Programmatic SEO Search Engine Hub */}
+      <ProgrammaticSEOSection onBookVisit={handleOpenVisit} />
 
       {/* Comprehensive SEO Content & FAQ Accordion */}
       <SEOContent />

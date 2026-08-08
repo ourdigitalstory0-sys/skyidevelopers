@@ -161,6 +161,36 @@ const jsonLdSchema = {
           }
         }
       ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://skyidevelopers.in/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://skyidevelopers.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Pune Real Estate", "item": "https://skyidevelopers.in/#portfolio" },
+        { "@type": "ListItem", "position": 3, "name": "NA Bungalow Plots Bhukum", "item": "https://skyidevelopers.in/#plot-estimator" },
+        { "@type": "ListItem", "position": 4, "name": "Skyi Songbirds Bhugaon", "item": "https://skyidevelopers.in/#portfolio" }
+      ]
+    },
+    {
+      "@type": "Place",
+      "@id": "https://skyidevelopers.in/#location-bhugaon",
+      "name": "Skyi Songbirds & SKYi Tigers Nest Bhugaon",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "18.4988",
+        "longitude": "73.7431"
+      }
+    },
+    {
+      "@type": "Place",
+      "@id": "https://skyidevelopers.in/#location-bhukum",
+      "name": "SKYi Manas Lake & NA Bungalow Plots Bhukum",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "18.5100",
+        "longitude": "73.7500"
+      }
     }
   ]
 };
