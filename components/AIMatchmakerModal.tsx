@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, X, Check, ArrowRight, Building2 } from 'lucide-react';
 import './AIMatchmakerModal.css';
@@ -15,6 +15,18 @@ export default function AIMatchmakerModal({ isOpen, onClose, onSelectProject }: 
   const [step, setStep] = useState(1);
   const [goal, setGoal] = useState<'plot' | 'flat' | 'luxury'>('plot');
   const [budget, setBudget] = useState<'45L-75L' | '75L-1.5Cr' | '1.5Cr+'>('75L-1.5Cr');
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+      window.addEventListener('keydown', onKey);
+      return () => {
+        document.body.style.overflow = '';
+        window.removeEventListener('keydown', onKey);
+      };
+    }
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 

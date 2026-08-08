@@ -114,6 +114,7 @@ export default function SiteVisitModal({ isOpen, onClose, defaultProject }: Site
 
   useEffect(() => {
     if (isOpen) {
+      document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
       // Auto-focus first input after animation
       const timer = setTimeout(() => {
@@ -121,6 +122,7 @@ export default function SiteVisitModal({ isOpen, onClose, defaultProject }: Site
         firstInput?.focus();
       }, 100);
       return () => {
+        document.body.style.overflow = '';
         window.removeEventListener('keydown', handleKeyDown);
         clearTimeout(timer);
       };

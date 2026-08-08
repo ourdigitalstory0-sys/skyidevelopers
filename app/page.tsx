@@ -50,36 +50,55 @@ function HomeContent() {
   useEffect(() => {
     let dotX = 0,  dotY = 0;
     let ringX = 0, ringY = 0;
-    let mouseX = 0, mouseY = 0;
+    let mouseX = -100, mouseY = -100;
+    let hasMoved = false;
     let raf: number;
+
+    const setOpacity = (val: string) => {
+      if (dotRef.current) dotRef.current.style.opacity = val;
+      if (ringRef.current) ringRef.current.style.opacity = val;
+    };
 
     const onMove = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
+      if (!hasMoved) {
+        hasMoved = true;
+        dotX = mouseX;
+        dotY = mouseY;
+        ringX = mouseX;
+        ringY = mouseY;
+        setOpacity('1');
+      }
     };
+
+    const onLeave = () => setOpacity('0');
+    const onEnter = () => { if (hasMoved) setOpacity('1'); };
 
     const tick = () => {
       dotX  += (mouseX - dotX)  * 0.85;
       dotY  += (mouseY - dotY)  * 0.85;
-      ringX += (mouseX - ringX) * 0.10;
-      ringY += (mouseY - ringY) * 0.10;
+      ringX += (mouseX - ringX) * 0.15;
+      ringY += (mouseY - ringY) * 0.15;
 
-      if (dotRef.current)  dotRef.current.style.transform  = `translate(${dotX}px,${dotY}px)`;
-      if (ringRef.current) ringRef.current.style.transform = `translate(${ringX}px,${ringY}px)`;
+      if (dotRef.current)  dotRef.current.style.transform  = `translate3d(${dotX}px,${dotY}px,0)`;
+      if (ringRef.current) ringRef.current.style.transform = `translate3d(${ringX}px,${ringY}px,0)`;
 
       raf = requestAnimationFrame(tick);
     };
 
     window.addEventListener('mousemove', onMove, { passive: true });
+    document.addEventListener('mouseleave', onLeave);
+    document.addEventListener('mouseenter', onEnter);
     raf = requestAnimationFrame(tick);
 
     // Hover enlargement via event delegation
     const over = (e: Event) => {
-      if ((e.target as Element).closest('a, button'))
+      if ((e.target as Element).closest('a, button, input, select, textarea'))
         ringRef.current?.classList.add('cursor-hover');
     };
     const out = (e: Event) => {
-      if ((e.target as Element).closest('a, button'))
+      if ((e.target as Element).closest('a, button, input, select, textarea'))
         ringRef.current?.classList.remove('cursor-hover');
     };
     document.addEventListener('mouseover',  over);
@@ -87,6 +106,8 @@ function HomeContent() {
 
     return () => {
       window.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseleave', onLeave);
+      document.removeEventListener('mouseenter', onEnter);
       document.removeEventListener('mouseover',  over);
       document.removeEventListener('mouseout',   out);
       cancelAnimationFrame(raf);

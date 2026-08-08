@@ -231,8 +231,8 @@ export default function Portfolio({ onOpenSiteVisit, onOpenFloorPlan }: Portfoli
   const [filter, setFilter] = useState<'All' | 'Apartments' | 'Townships' | 'Plots'>('All');
 
   useEffect(() => {
-    document.body.style.overflow = selected ? 'hidden' : 'unset';
-    return () => { document.body.style.overflow = 'unset'; };
+    document.body.style.overflow = selected ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
   }, [selected]);
 
   const filteredProjects = filter === 'All'

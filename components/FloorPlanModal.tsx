@@ -172,8 +172,12 @@ export default function FloorPlanModal({
 
   useEffect(() => {
     if (isOpen) {
+      document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
-      return () => window.removeEventListener('keydown', handleKeyDown);
+      return () => {
+        document.body.style.overflow = '';
+        window.removeEventListener('keydown', handleKeyDown);
+      };
     }
   }, [isOpen, handleKeyDown]);
 
