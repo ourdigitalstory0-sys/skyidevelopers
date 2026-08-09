@@ -8,13 +8,12 @@ import './Navbar.css';
 const SECTIONS = ['home', 'about', 'portfolio', 'plot-estimator', 'calculator', 'connectivity', 'testimonials', 'contact'];
 
 const NAV_LINKS = [
-  { name: 'Home',            href: '#home',           id: 'home' },
-  { name: 'Portfolio',       href: '#portfolio',      id: 'portfolio' },
-  { name: 'NA Plots Bhukum', href: '#plot-estimator', id: 'plot-estimator' },
-  { name: 'Calculator',      href: '#calculator',     id: 'calculator' },
-  { name: 'Connectivity',    href: '#connectivity',   id: 'connectivity' },
-  { name: 'Reviews',         href: '#testimonials',   id: 'testimonials' },
-  { name: 'Contact',         href: '#contact',        id: 'contact' },
+  { name: 'Home',            href: '/',                 id: 'home' },
+  { name: 'Portfolio',       href: '/projects',         id: 'portfolio' },
+  { name: 'NA Plots Bhukum', href: '/na-plots-bhukum',   id: 'plot-estimator' },
+  { name: 'Calculator',      href: '/plot-estimator',   id: 'calculator' },
+  { name: 'Connectivity',    href: '/connectivity',     id: 'connectivity' },
+  { name: 'Contact',         href: '/contact',          id: 'contact' },
 ];
 
 interface NavbarProps {

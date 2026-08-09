@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { sanitizeInput } from '../../../utils/security';
 import { logger } from '../../../utils/logger';
 import { checkRateLimit } from '../../../utils/rateLimiter';
+import { sendLeadEmailNotification } from '../../../utils/emailService';
 
 interface LeadPayload {
   name: string;
@@ -10,6 +11,7 @@ interface LeadPayload {
   project?: string;
   visitDate?: string;
   visitTime?: string;
+  pickupNeeded?: boolean;
   message?: string;
   utmSource?: string;
   utmMedium?: string;
@@ -32,11 +34,16 @@ export async function POST(request: Request) {
 
     // 1. Sanitize inputs
     const sanitizedName = sanitizeInput(body.name || '');
-    const sanitizedPhone = sanitizeInput(body.phone || '');
+    let sanitizedPhone = sanitizeInput(body.phone || '').replace(/[\s\-()+]/g, '');
+    if (sanitizedPhone.startsWith('91') && sanitizedPhone.length === 12) {
+      sanitizedPhone = sanitizedPhone.slice(2);
+    } else if (sanitizedPhone.startsWith('0') && sanitizedPhone.length === 11) {
+      sanitizedPhone = sanitizedPhone.slice(1);
+    }
     const sanitizedEmail = sanitizeInput(body.email || '');
     const sanitizedProject = sanitizeInput(body.project || 'General Inquiry');
     const sanitizedMessage = sanitizeInput(body.message || '');
-    const utmSource = sanitizeInput(body.utmSource || 'Direct');
+    const utmSource = sanitizeInput(body.utmSource || 'Direct Website Visit');
 
     // 2. Validate mandatory fields
     if (!sanitizedName || sanitizedName.length < 2) {
@@ -65,7 +72,21 @@ export async function POST(request: Request) {
       source: utmSource,
     });
 
-    // 4. Return success response
+    // 4. Dispatch Email Alert to propsmartrealty@gmail.com
+    sendLeadEmailNotification({
+      leadId: leadRefId,
+      name: sanitizedName,
+      phone: sanitizedPhone,
+      email: sanitizedEmail,
+      project: sanitizedProject,
+      visitDate: body.visitDate,
+      visitTime: body.visitTime,
+      pickupNeeded: body.pickupNeeded,
+      message: sanitizedMessage,
+      source: utmSource,
+    }).catch((err) => logger.error('[Email Dispatch Non-Blocking Error]', err));
+
+    // 5. Return success response
     return NextResponse.json(
       {
         success: true,

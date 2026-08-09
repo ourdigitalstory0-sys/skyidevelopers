@@ -1,19 +1,62 @@
+/* ════════════════════════════════════════
+   FLOOR PLAN BLUEPRINT MODAL (HIGH CONTRAST & INTERACTIVE)
+════════════════════════════════════════ */
+.floor-plan-backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(5, 8, 22, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100000 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  overflow-y: auto;
+}
+
 .floor-plan-modal {
-  background: rgba(18, 24, 38, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0b1120 !important;
+  border: 1px solid rgba(59, 130, 246, 0.35) !important;
   border-radius: 20px;
   width: 100%;
   max-width: 900px;
   padding: 2.25rem;
   position: relative;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 35px rgba(59, 130, 246, 0.15);
-  color: #f8fafc;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(59, 130, 246, 0.2);
+  color: #ffffff !important;
   max-height: 90vh;
+  max-height: 90dvh;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 100001 !important;
+}
+
+/* Force native cursor and interaction inside modal */
+.floor-plan-backdrop *,
+.floor-plan-modal * {
+  cursor: auto !important;
+  pointer-events: auto;
+}
+
+.floor-plan-modal button,
+.floor-plan-modal a {
+  cursor: pointer !important;
+}
+
+@media (max-width: 600px) {
+  .floor-plan-modal {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
 }
 
 .floor-modal-header {
   margin-bottom: 1.5rem;
+  padding-right: 2.5rem;
 }
 
 .plan-tabs {
@@ -24,22 +67,27 @@
 }
 
 .plan-tab {
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #94a3b8;
-  padding: 0.5rem 1.2rem;
+  background: #111827 !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  color: #cbd5e1 !important;
+  padding: 0.55rem 1.25rem;
   border-radius: 100px;
   font-size: 0.875rem;
-  font-weight: 500;
-  cursor: pointer;
+  font-weight: 600;
+  cursor: pointer !important;
   transition: all 0.2s ease;
 }
 
+.plan-tab:hover {
+  background: rgba(59, 130, 246, 0.2) !important;
+  color: #ffffff !important;
+}
+
 .plan-tab.active {
-  background: #3b82f6;
-  border-color: #3b82f6;
-  color: #ffffff;
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+  background: #3b82f6 !important;
+  border-color: #3b82f6 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.5);
 }
 
 .floor-plan-content-grid {
@@ -52,162 +100,118 @@
 @media (max-width: 768px) {
   .floor-plan-content-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 }
 
 .blueprint-container {
-  background: #090d16;
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: #060913 !important;
+  border: 1px solid rgba(59, 130, 246, 0.4) !important;
   border-radius: 16px;
   padding: 1.25rem;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .blueprint-badge {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  color: #34d399;
-  font-size: 0.75rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 100px;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
+  top: 12px;
+  left: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.2);
+  padding: 3px 8px;
+  border-radius: 6px;
 }
 
 .blueprint-svg {
   width: 100%;
+  max-width: 380px;
   height: auto;
-  margin: 1rem 0;
 }
 
-.blueprint-caption {
-  font-size: 0.775rem;
-  color: #64748b;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.floor-specs-container h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.25rem;
-}
-
-.price-tag {
-  font-size: 1.25rem;
+.plan-details-panel h3 {
+  font-size: 1.45rem;
   font-weight: 800;
-  color: #60a5fa;
-  margin-bottom: 1.25rem;
+  color: #ffffff !important;
+  margin-bottom: 0.8rem;
 }
 
-.specs-metrics {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
-}
-
-.spec-box {
-  background: rgba(30, 41, 59, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  padding: 0.75rem;
+.plan-meta-pills {
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
 }
 
-.spec-box.full {
-  grid-column: span 2;
-}
-
-.spec-lbl {
-  font-size: 0.75rem;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.spec-val {
-  font-size: 0.9rem;
+.meta-pill {
+  font-size: 0.8rem;
+  color: #38bdf8 !important;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 0.35rem 0.75rem;
+  border-radius: 100px;
   font-weight: 600;
-  color: #f1f5f9;
 }
 
-.specs-list h4 {
-  font-size: 0.9rem;
-  color: #cbd5e1;
-  margin-bottom: 0.5rem;
-}
-
-.specs-list ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.5rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.specs-list li {
+.specs-title {
   font-size: 0.85rem;
-  color: #94a3b8;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #94a3b8 !important;
+  margin-bottom: 0.6rem;
+}
+
+.specs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.spec-item {
+  font-size: 0.875rem;
+  color: #f1f5f9 !important;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.check-icon {
-  color: #10b981;
-  flex-shrink: 0;
+.plan-pricing-box {
+  background: #111827 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
 }
 
-.modal-action-buttons {
+.price-label {
+  font-size: 0.85rem;
+  color: #94a3b8 !important;
+}
+
+.price-value {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffd700 !important;
+}
+
+.modal-actions {
   display: flex;
-  flex-direction: column;
   gap: 0.75rem;
 }
 
-.download-brochure-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  border-radius: 10px;
-  padding: 0.75rem 1.25rem;
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  transition: all 0.2s ease;
-}
-
-.download-brochure-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.book-modal-visit-btn {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  border: none;
-  color: #ffffff;
-  border-radius: 10px;
-  padding: 0.75rem 1.25rem;
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+@media (max-width: 480px) {
+  .modal-actions {
+    flex-direction: column;
+  }
 }

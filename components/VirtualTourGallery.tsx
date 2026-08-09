@@ -39,7 +39,7 @@ const TOUR_ITEMS: TourMedia[] = [
     bgImage: '/bungalow-plots.jpg',
     badge: 'Vector Blueprint & Plot Tour',
     duration: '3:30 Min',
-    description: 'Explore the PMRDA-sanctioned clear title NA plot layouts ranging from 1,500 to 5,000+ sq.ft. featuring underground utilities and wide concrete roads.',
+    description: 'Explore the PMRDA-sanctioned clear title NA plot layouts ranging from 2,000 to 6,000+ sq.ft. (Starting ₹95 Lakhs*) featuring underground utilities and wide concrete roads.',
   },
   {
     id: '3',

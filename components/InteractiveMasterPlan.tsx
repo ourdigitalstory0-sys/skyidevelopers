@@ -21,7 +21,7 @@ const SECTORS: Sector[] = [
     type: 'PMRDA NA Villa Plots',
     acres: '25 Acres (Phase 1)',
     status: 'Launching 2025',
-    highlights: ['1,500 - 5,000+ Sq.Ft Plots', '100% Clear Title 7/12', 'Direct Lake Promenade Access', 'Underground Utilities'],
+    highlights: ['2,000 - 6,000+ Sq.Ft Plots', 'Starting ₹95 Lakhs*', '100% Clear Title 7/12', 'Direct Lake Promenade Access', 'Underground Utilities'],
   },
   {
     id: 'songbirds-township',

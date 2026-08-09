@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════
-   NA PLOT VILLA ESTIMATOR STYLES
+   NA PLOT VALUATION ESTIMATOR STYLES
 ════════════════════════════════════════ */
 .estimator-section {
   padding: 100px 24px;
@@ -64,6 +64,32 @@
   margin-bottom: 0.5rem;
 }
 
+.est-corridor-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.est-corridor-btn {
+  text-align: left;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.est-corridor-btn:hover,
+.est-corridor-btn.active {
+  background: rgba(255, 107, 53, 0.15);
+  border-color: var(--accent-1);
+  color: #ffffff;
+}
+
 .est-val-highlight {
   font-size: 1.1rem;
   font-weight: 700;
@@ -91,77 +117,27 @@
   margin-top: 0.5rem;
 }
 
-.est-btn-group {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.est-select-btn {
-  flex: 1;
-  min-width: 100px;
-  padding: 0.75rem 1rem;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text-secondary);
-  font-family: var(--font-main);
-  font-size: 0.9rem;
-  font-weight: 600;
-  transition: all 0.25s ease;
-}
-
-.est-select-btn.active,
-.est-select-btn:hover {
-  background: rgba(255, 107, 53, 0.18);
-  border-color: var(--accent-1);
-  color: #ffffff;
-}
-
-.spec-tier-cards {
+.est-specs-list {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 10px;
 }
 
-.spec-tier-card {
-  border-radius: 14px;
-  padding: 1rem 1.25rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.25s ease;
-}
-
-.spec-tier-card:hover,
-.spec-tier-card.active {
-  background: rgba(255, 107, 53, 0.12);
-  border-color: var(--accent-1);
-}
-
-.st-head {
+.est-spec-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.35rem;
-}
-
-.st-name {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.st-rate {
+  gap: 10px;
   font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--accent-gold);
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.st-desc {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  line-height: 1.4;
-}
+.est-icon-green { color: #34d399; }
+.est-icon-blue { color: #38bdf8; }
+.est-icon-gold { color: var(--accent-gold); }
 
 /* Results box */
 .estimator-results {

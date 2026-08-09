@@ -136,7 +136,12 @@ export default function SiteVisitModal({ isOpen, onClose, defaultProject }: Site
     setValidationError(null);
 
     const cleanName = sanitizeInput(formData.name);
-    const cleanPhone = sanitizeInput(formData.phone).replace(/[\s\-()+]/g, '');
+    let cleanPhone = sanitizeInput(formData.phone).replace(/[\s\-()+]/g, '');
+    if (cleanPhone.startsWith('91') && cleanPhone.length === 12) {
+      cleanPhone = cleanPhone.slice(2);
+    } else if (cleanPhone.startsWith('0') && cleanPhone.length === 11) {
+      cleanPhone = cleanPhone.slice(1);
+    }
     const cleanEmail = sanitizeInput(formData.email);
 
     /* Validation Hardening */

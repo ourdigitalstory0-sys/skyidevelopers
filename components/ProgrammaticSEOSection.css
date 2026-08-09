@@ -14,7 +14,7 @@
 
 .p-seo-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .p-seo-subtitle {
@@ -22,6 +22,64 @@
   font-size: 1rem;
   max-width: 750px;
   margin: 12px auto 0 auto;
+}
+
+/* Micro-Location Quick Chips */
+.p-seo-chips-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 12px 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+}
+
+.p-seo-chip-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.p-seo-chips-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 107, 53, 0.4) transparent;
+}
+
+.p-seo-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-secondary);
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.p-seo-chip:hover {
+  background: rgba(255, 107, 53, 0.15);
+  border-color: rgba(255, 107, 53, 0.4);
+  color: #ffffff;
+}
+
+.p-seo-chip.active {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
 }
 
 .p-seo-filter-bar {
@@ -137,14 +195,33 @@
 .p-seo-price {
   font-size: 14px;
   color: var(--accent-gold);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+}
+
+.p-seo-specs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.p-seo-specs span {
+  font-size: 11px;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .p-seo-features {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .p-seo-feat-tag {
@@ -156,6 +233,28 @@
   display: flex;
   align-items: center;
   gap: 6px;
+}
+
+.p-seo-bank-loans {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.p-seo-bank-label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.p-seo-bank-tag {
+  font-size: 10px;
+  color: #a7f3d0;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
 .p-seo-keywords {

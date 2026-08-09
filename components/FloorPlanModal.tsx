@@ -102,10 +102,10 @@ const FLOOR_PLANS = [
   },
   {
     type: 'NA Bungalow Plot (Bhukum / Manas Lake)',
-    carpetArea: '1,800 - 4,500 Sq.Ft. Plot Area',
+    carpetArea: '2,000 - 6,000+ Sq.Ft. Plot Area',
     balcony: 'Private Garden & Promenade Boundary',
     facing: 'Lake Facing & North-East Vastu Compliant',
-    priceStarting: 'Price On Request (Launching Soon)',
+    priceStarting: 'Starting ₹ 95 Lakhs*',
     specs: ['100% PMRDA Sanctioned Clear Title NA Status', 'Underground Utilities (Water, Electricity, Fiber Internet)', 'Gated Security Entry with 90-Acre Township Access', 'Custom Bungalow & Villa Architectural Freedom'],
     blueprintSvg: (
       <svg viewBox="0 0 400 300" className="blueprint-svg">
@@ -192,7 +192,7 @@ export default function FloorPlanModal({
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="modal-backdrop"
+          className="modal-backdrop floor-plan-backdrop"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

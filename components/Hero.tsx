@@ -128,9 +128,9 @@ export default function Hero({ onOpenSiteVisit }: HeroProps) {
       >
         {/* Strategic Launch Link Banner */}
         <motion.div className="hero-badge" variants={item}>
-          <a href="#plot-estimator" className="hero-link-badge">
+          <a href="/na-plots-bhukum" className="hero-link-badge">
             <span className="badge-dot" />
-            <span>🔥 Launching 2025: SKYi Manas Lake NA Bungalow Plots Bhukum, Paud Road — PMRDA Approved</span>
+            <span>🔥 Launching 2025: SKYi Manas Lake NA Bungalow Plots Bhukum, Paud Road — PMRDA Approved • 2,000 SQFT Onwards • Starting ₹95 Lakhs*</span>
           </a>
         </motion.div>
 

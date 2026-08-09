@@ -98,8 +98,7 @@
 .lc-accent {
   width: 4px;
   flex-shrink: 0;
-  background: var(--loc-color);
-  box-shadow: 0 0 12px var(--loc-color);
+  background: var(--loc-color, var(--accent-1));
 }
 
 .lc-body {
@@ -109,41 +108,36 @@
 
 .lc-top {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 5px;
-  gap: 10px;
+  margin-bottom: 4px;
 }
 
 .lc-title {
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text-primary);
-  letter-spacing: -0.3px;
 }
 
 .lc-status {
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
-  padding: 3px 10px;
+  letter-spacing: 0.8px;
+  color: var(--accent-gold);
+  background: rgba(255, 215, 0, 0.1);
+  padding: 2px 8px;
   border-radius: 20px;
-  background: rgba(255,255,255,0.07);
-  color: var(--text-muted);
-  white-space: nowrap;
-  flex-shrink: 0;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 215, 0, 0.2);
 }
 
 .lc-area {
+  font-size: 12px;
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 12px;
-  color: var(--accent-1);
-  margin-bottom: 7px;
-  font-weight: 600;
+  gap: 4px;
+  margin-bottom: 8px;
 }
 
 .lc-meta {
@@ -151,14 +145,15 @@
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: var(--text-secondary);
-  margin-bottom: 4px;
-  font-weight: 600;
+  color: var(--accent-3);
+  margin-bottom: 6px;
 }
+
 .lc-dot {
-  width: 3px; height: 3px;
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
-  background: var(--text-muted);
+  background: currentColor;
 }
 
 .lc-nearby {
@@ -170,83 +165,244 @@
 .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .faq-item {
-  border-radius: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.07);
-  transition: border-color 0.25s;
+  transition: border-color 0.3s;
 }
+
 .faq-item.open {
-  border-color: rgba(255,107,53,0.3);
+  border-color: rgba(255,107,53,0.35);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .faq-question {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  padding: 18px 20px;
-  background: none;
+  padding: 18px 24px;
+  background: transparent;
   border: none;
-  color: var(--text-primary);
-  font-family: var(--font-main);
-  font-size: 14px;
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   text-align: left;
-  line-height: 1.5;
-  cursor: none;
-  transition: color 0.2s;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 600;
+  gap: 16px;
+
+  /* Touch-friendly target size for mobile */
+  min-height: 48px;
 }
-.faq-question:hover { color: var(--accent-2); }
-.faq-item.open .faq-question { color: var(--accent-1); }
+
+.faq-question:hover { color: var(--accent-1); }
 
 .faq-chevron {
-  color: var(--text-muted);
+  color: var(--accent-1);
   flex-shrink: 0;
 }
-.faq-item.open .faq-chevron { color: var(--accent-1); }
 
 .faq-answer {
   overflow: hidden;
 }
+
 .faq-answer p {
-  padding: 0 20px 18px;
-  font-size: 13.5px;
+  padding: 0 24px 20px 24px;
+  font-size: 14px;
   color: var(--text-secondary);
-  line-height: 1.78;
+  line-height: 1.75;
 }
 
-/* ─── Keyword block (visible, white-hat) ─── */
-.seo-keywords-block {
+/* ─── Pune Regional Hubs & NA Plot Guide ─── */
+.pune-zones-section {
   max-width: 1300px;
-  margin: 64px auto 0;
-  padding: 28px 36px;
-  background: rgba(255,255,255,0.025);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 16px;
-}
-.seo-keywords-block p {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.9;
-}
-.seo-keywords-block strong {
-  color: var(--text-secondary);
-  font-weight: 600;
-}
-
-/* ─── Global NRI Hub Section ─── */
-.nri-hub-section {
-  max-width: 1300px;
-  margin: 4rem auto 0 auto;
+  margin: 60px auto 0 auto;
   padding: 2.5rem;
   border-radius: 20px;
-  background: linear-gradient(145deg, rgba(30, 58, 138, 0.4) 0%, rgba(18, 24, 38, 0.8) 100%);
-  border: 1px solid rgba(96, 165, 250, 0.3);
+  background: rgba(18, 24, 38, 0.7);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.pune-zones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.pune-zone-card {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.pune-zone-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 107, 53, 0.4);
+}
+
+.pz-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--gradient-primary);
+}
+
+.pune-zone-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.pz-suburbs {
+  font-size: 0.85rem;
+  color: var(--accent-3);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.pz-desc {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+/* ─── Footer Level SEO Articles Reader ─── */
+.pune-na-articles-section {
+  max-width: 1300px;
+  margin: 60px auto 0 auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.na-articles-wrapper {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .na-articles-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.na-articles-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.na-art-btn {
+  text-align: left;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.na-art-btn:hover,
+.na-art-btn.active {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.na-art-cat {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-gold);
+}
+
+.na-art-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.35;
+}
+
+.na-article-viewer {
+  padding: 24px;
+  border-radius: 16px;
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.na-art-view-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.na-art-tag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.na-art-read {
+  font-size: 12px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.na-article-viewer h4 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.na-art-body p {
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.na-art-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ─── Global NRI Investment Hub ─── */
+.nri-hub-section {
+  max-width: 1300px;
+  margin: 60px auto 0 auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(59, 130, 246, 0.25);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -262,11 +418,11 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #60a5fa;
-  background: rgba(96, 165, 250, 0.12);
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
   padding: 0.35rem 0.8rem;
   border-radius: 100px;
-  border: 1px solid rgba(96, 165, 250, 0.25);
+  border: 1px solid rgba(56, 189, 248, 0.25);
   margin-bottom: 0.75rem;
 }
 
@@ -280,7 +436,6 @@
 .nri-hub-header p {
   color: #94a3b8;
   font-size: 0.95rem;
-  max-width: 800px;
 }
 
 .nri-benefits-grid {
@@ -290,113 +445,47 @@
 }
 
 .nri-benefit-card {
-  background: rgba(30, 41, 59, 0.6);
+  background: rgba(30, 41, 59, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  transition: all 0.25s ease;
+  padding: 1.25rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .nri-benefit-card:hover {
-  border-color: rgba(96, 165, 250, 0.4);
   transform: translateY(-4px);
+  border-color: rgba(59, 130, 246, 0.4);
 }
 
 .nri-card-icon {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: rgba(96, 165, 250, 0.15);
-  border: 1px solid rgba(96, 165, 250, 0.3);
+  background: rgba(59, 130, 246, 0.15);
   color: #60a5fa;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0.85rem;
 }
 
 .nri-benefit-card h4 {
   font-size: 1.05rem;
   font-weight: 600;
   color: #ffffff;
+  margin-bottom: 0.4rem;
 }
 
 .nri-benefit-card p {
   font-size: 0.85rem;
   color: #94a3b8;
-  line-height: 1.55;
-}
-
-/* ─── Pune Regional Search Index Section ─── */
-.pune-zones-section {
-  max-width: 1300px;
-  margin: 4rem auto 0 auto;
-  padding: 2.5rem;
-  border-radius: 20px;
-  background: rgba(18, 24, 38, 0.75);
-  border: 1px solid rgba(255, 107, 53, 0.25);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-}
-
-.pune-zones-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
-}
-
-.pune-zone-card {
-  background: rgba(30, 41, 59, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 1.5rem;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.25s ease;
-}
-
-.pune-zone-card:hover {
-  border-color: rgba(255, 107, 53, 0.4);
-  transform: translateY(-4px);
-}
-
-.pz-accent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-}
-
-.pune-zone-card h4 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-.pz-suburbs {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
   line-height: 1.5;
-  margin-bottom: 0.6rem;
 }
 
-.pz-suburbs strong {
-  color: var(--accent-gold);
-}
-
-.pz-desc {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  line-height: 1.45;
-}
-
-/* ─── Pune NA Plots Guide Section ─── */
+/* ─── Specialized Pune NA Plots Legal Checklist & Guide ─── */
 .na-guide-section {
   max-width: 1300px;
-  margin: 4rem auto 0 auto;
+  margin: 60px auto 0 auto;
   padding: 2.5rem;
   border-radius: 20px;
   background: rgba(18, 24, 38, 0.7);
@@ -474,6 +563,23 @@
   font-size: 0.85rem;
   color: #94a3b8;
   line-height: 1.5;
+}
+
+/* ─── SEO Master Keywords Block ─── */
+.seo-keywords-block {
+  max-width: 1300px;
+  margin: 60px auto 0 auto;
+  padding: 24px 30px;
+  border-radius: 16px;
+  background: rgba(10, 15, 30, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.seo-keywords-block strong {
+  color: var(--text-secondary);
 }
 
 /* ─── Responsive ─── */
