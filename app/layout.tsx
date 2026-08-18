@@ -19,6 +19,8 @@ export const metadata: Metadata = {
     'NA bungalow plots Pune', 'PMRDA NA plots Pune', 'clear title 7/12 NA plots Pune', 'NA plots Bhukum', 'NA plots Bavdhan', 'NA plots Manas Lake', 'NA plots Bhugaon', 'NA plots Chandani Chowk',
     'NA plots Kothrud', 'NA plots Baner', 'NA plots Paud Road', 'NA plots Mulshi', 'NA plots Pirangut', 'NA plots Sus', 'NA plots Hinjewadi', 'NA plots Kasarsai', 'NA plots Talegaon', 'NA plots Khadakwasla', 'NA plots Wagholi', 'NA plots Saswad', 'NA plots Lavasa Road',
     'PMRDA approved NA plots Pune', 'clear title NA plots Pune', 'villa plots Paud Road Pune', 'NRI real estate investment Pune', 'NA plots 2000 sqft Pune', 'NA plots 95 lakhs Pune',
+    'buy 1 BHK flat Pune', 'buy 2 BHK flat Pune', 'buy 3 BHK flat Pune', 'buy 4 BHK flat Pune', 'buy NA plot in Pune', 'flat for sale in Kothrud', 'flats for sale in Bavdhan', 'flats for sale in Bhugaon',
+    'flats near Hinjewadi IT Park', 'ready possession flats Pune', 'under construction projects Paud Road', 'lakeside apartments Pune', 'top real estate developers Pune', 'best builders in Pune',
     'pune madhe plot', 'pune NA plot sale', 'bhugaon bungalow plot', 'ghar bandhnya sathi plot pune', 'swatacha bungalow pune plot'
   ],
   authors: [{ name: 'Skyi Developers' }],
