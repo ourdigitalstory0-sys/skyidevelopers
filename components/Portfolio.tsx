@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import type { MouseEvent as ReactMouseEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, X, MapPin, Building2, Home, Star, Calendar, FileText } from 'lucide-react';
+import { getProjectImage } from '../utils/dynamicImages';
 import './Portfolio.css';
 
 interface Project {
@@ -25,7 +26,7 @@ const PROJECTS: Project[] = [
     title: 'Skyi Songbirds',
     category: 'Townships',
     description: 'A thoughtfully designed 45+ acre township surrounded by the Sahyadri Hills and the 7,000-acre NDA forest. 1, 3 & 4 BHK homes.',
-    bgImage: '/songbirds-1.webp',
+    bgImage: getProjectImage('skyi-songbirds'),
     scale: '45+ Acres, 2,000+ Families',
     configuration: '1, 3, & 4 BHK Premium Residences',
     location: 'Bhugaon, Paud Road, Pune (10 mins from Kothrud & Chandani Chowk)',
@@ -37,7 +38,7 @@ const PROJECTS: Project[] = [
     title: 'SKYi Manas Lake',
     category: 'Apartments',
     description: 'A benchmark 90-acre eco-township featuring lakeside luxury apartments, CRISIL ratings & IGBC Platinum sustainability certification.',
-    bgImage: '/songbirds-2.webp',
+    bgImage: getProjectImage('skyi-manas-lake-apartment'),
     scale: '90-100 Acres, 2,000+ Families',
     configuration: '2 & 3 BHK Premium Apartments',
     location: 'Paud Road, Bhukum / Bavdhan, Pune (Near Chandani Chowk)',
@@ -49,7 +50,7 @@ const PROJECTS: Project[] = [
     title: 'SKYi Manas Lake NA Bungalow Plots',
     category: 'Plots',
     description: 'Exclusive PMRDA sanctioned 100% Clear Title NA Bungalow Plots at the serene Manas Lake campus, Bhukum — minutes from Chandani Chowk & Kothrud.',
-    bgImage: '/bungalow-plots.jpg',
+    bgImage: getProjectImage('skyi-manas-lake-na-plots'),
     scale: '100% PMRDA Sanctioned, Gated Community',
     configuration: 'NA Villa Plots (2,000 to 6,000+ Sq.Ft.) — Starting ₹95 Lakhs*',
     location: 'Manas Lake Campus, Bhukum, Paud Road (Near Chandani Chowk, Pune)',
@@ -66,7 +67,7 @@ const PROJECTS: Project[] = [
     title: 'SKYi Star Town NA Villa Plots',
     category: 'Plots',
     description: 'PMRDA Sanctioned Clear Title NA Villa Plots at Bhugaon Foothills overlooking the 7,000-acre NDA forest reserve.',
-    bgImage: '/bungalow-plots.jpg',
+    bgImage: getProjectImage('skyi-star-town-na-plots'),
     scale: 'PMRDA Sanctioned, Individual PR Card',
     configuration: 'NA Villa Plots (2,000 to 6,000 Sq.Ft.)',
     location: 'Bhugaon Foothills, Paud Road (10 Mins from Kothrud & Chandani Chowk)',
@@ -83,7 +84,7 @@ const PROJECTS: Project[] = [
     title: 'SKYi Lakeside Meadows NA Plots',
     category: 'Plots',
     description: 'Resort-Style Lakefront NA Bungalow Plots fronting Kasarsai Dam — just 12 mins from Hinjawadi Phase 3 IT Park.',
-    bgImage: '/bungalow-plots.jpg',
+    bgImage: getProjectImage('skyi-lakeside-meadows-kasarsai'),
     scale: 'Kasarsai Lake Frontage, PMRDA Approved',
     configuration: 'Lakeside NA Villa Plots (2,000 to 6,000 Sq.Ft.)',
     location: 'Kasarsai Dam Lakefront, Hinjewadi Extension, Pune',
@@ -100,7 +101,7 @@ const PROJECTS: Project[] = [
     title: 'SKYi Park & SKYi Iris',
     category: 'Baner & Bavdhan',
     description: 'Premium boutique residential developments located in Baner & Bavdhan near Hinjawadi IT Hub and Pune University.',
-    bgImage: '/songbirds-1.webp',
+    bgImage: getProjectImage('skyi-park-iris-baner'),
     scale: 'Prime Urban Residential',
     configuration: '2 & 3 BHK Luxury Residences',
     location: 'Baner / Bavdhan Corridor, Pune',
@@ -112,7 +113,7 @@ const PROJECTS: Project[] = [
     title: 'SKYi Aura Heights & SKYi Tigers Nest',
     category: 'Townships',
     description: 'Exclusive hillside residences overlooking the Sahyadri valley and NDA forest reserve along Paud Road.',
-    bgImage: '/songbirds-2.webp',
+    bgImage: getProjectImage('skyi-tigers-nest-bhugaon'),
     scale: 'Hillside Sanctuary',
     configuration: '3 & 4 BHK Luxury Hillside Homes',
     location: 'Bhugaon / Bavdhan Hillside, Pune',
@@ -124,7 +125,7 @@ const PROJECTS: Project[] = [
     title: 'SKYi PWC Towers & Hillside',
     category: 'Townships',
     description: 'Flagship towers integrated with the 5-acre Poona Western Club at Skyi Songbirds campus, Bhugaon.',
-    bgImage: '/songbirds-3.webp',
+    bgImage: getProjectImage('skyi-pwc-towers'),
     scale: 'Integrated Club Residences',
     configuration: '3 & 4 BHK Club-View Apartments',
     location: 'Skyi Songbirds, Bhugaon, Paud Road, Pune',
@@ -136,7 +137,7 @@ const PROJECTS: Project[] = [
     title: 'Skyi Star City',
     category: 'Townships',
     description: 'A well-planned community spread across 20 acres with self-sufficient infrastructure and 70% open green spaces.',
-    bgImage: '/songbirds-3.webp',
+    bgImage: getProjectImage('skyi-star-city-dhayari'),
     scale: '20 Acres Integrated Township',
     configuration: '2 & 3 BHK Apartments',
     location: 'Dhayari, Pune (Near DSK Vishwa)',

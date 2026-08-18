@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Eye, X, MapPin, Calendar } from 'lucide-react';
+import { getProjectImage } from '../utils/dynamicImages';
 import './VirtualTourGallery.css';
 
 interface VirtualTourProps {
@@ -26,7 +27,7 @@ const TOUR_ITEMS: TourMedia[] = [
     title: 'SKYi Manas Lake 360° Drone Aerial View',
     category: 'Aerial Drone',
     location: 'Bhukum / Bavdhan, Paud Road',
-    bgImage: '/songbirds-2.webp',
+    bgImage: getProjectImage('skyi-manas-lake-apartment'),
     badge: '360° Aerial Tour',
     duration: '4:15 Min',
     description: 'Experience the 90+ acre IGBC Platinum certified lakeside township from above. View Manas Lake, Paud Road 6-lane access, and Sahyadri mountain vistas.',
@@ -36,7 +37,7 @@ const TOUR_ITEMS: TourMedia[] = [
     title: 'SKYi Manas Lake NA Bungalow Plots Campus',
     category: 'NA Plots',
     location: 'Manas Lake Campus, Bhukum',
-    bgImage: '/bungalow-plots.jpg',
+    bgImage: getProjectImage('skyi-manas-lake-na-plots'),
     badge: 'Vector Blueprint & Plot Tour',
     duration: '3:30 Min',
     description: 'Explore the PMRDA-sanctioned clear title NA plot layouts ranging from 2,000 to 6,000+ sq.ft. (Starting ₹95 Lakhs*) featuring underground utilities and wide concrete roads.',
@@ -46,7 +47,7 @@ const TOUR_ITEMS: TourMedia[] = [
     title: 'Poona Western Club & Sports Academies',
     category: 'Clubhouse',
     location: 'Skyi Songbirds, Bhugaon',
-    bgImage: '/songbirds-1.webp',
+    bgImage: getProjectImage('skyi-songbirds'),
     badge: 'Clubhouse & Amenities',
     duration: '5:00 Min',
     description: 'Walk through the 5-acre sports club featuring Olympic-length pool, football academy, tennis courts, and fine dining banquets.',
@@ -56,7 +57,7 @@ const TOUR_ITEMS: TourMedia[] = [
     title: 'SKYi Tigers Nest & PWC Towers Hillside',
     category: 'Townships',
     location: 'Bhugaon Hillside Sanctuary',
-    bgImage: '/songbirds-3.webp',
+    bgImage: getProjectImage('skyi-tigers-nest-bhugaon'),
     badge: 'Hillside Sanctuary',
     duration: '3:45 Min',
     description: 'Virtual walkthrough of luxury 3 & 4 BHK hillside residences overlooking the 7,000-acre NDA forest reserve.',
