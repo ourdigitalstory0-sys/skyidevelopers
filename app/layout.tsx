@@ -83,9 +83,9 @@ const jsonLdSchema = {
       "@type": "Organization",
       "@id": "https://skyidevelopers.in/#organization",
       "name": "Skyi Developers",
-      "alternateName": ["SKYi Developers", "Skyi Developer Pune", "SKYi Properties"],
+      "alternateName": ["SKYi Developers", "Skyi Developer Pune", "SKYi Properties", "SKYi Real Estate"],
       "url": "https://skyidevelopers.in/",
-      "logo": "https://skyidevelopers.in/logo-white.svg",
+      "logo": "https://skyidevelopers.in/favicon.svg",
       "telephone": "+91-20-66143000",
       "email": "info@skyidevelopers.com",
       "foundingDate": "2004",
@@ -96,6 +96,13 @@ const jsonLdSchema = {
         "addressRegion": "Maharashtra",
         "postalCode": "411045",
         "addressCountry": "IN"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1480",
+        "bestRating": "5",
+        "worstRating": "1"
       }
     },
     {
@@ -112,6 +119,12 @@ const jsonLdSchema = {
         "addressRegion": "Maharashtra",
         "postalCode": "411045",
         "addressCountry": "IN"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1480",
+        "bestRating": "5"
       }
     },
     {
@@ -121,49 +134,91 @@ const jsonLdSchema = {
         {
           "@type": "Offer",
           "itemOffered": {
-            "@type": "Residence",
-            "name": "Skyi Songbirds & SKYi Tigers Nest",
+            "@type": "RealEstateListing",
+            "name": "SKYi Manas Lake PMRDA NA Bungalow Plots Bhukum",
+            "price": "9500000",
+            "priceCurrency": "INR",
+            "address": { "@type": "PostalAddress", "addressLocality": "Bhukum, Paud Road", "addressRegion": "Pune", "addressCountry": "IN" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "RealEstateListing",
+            "name": "Skyi Songbirds Eco Township Bhugaon",
+            "price": "6800000",
+            "priceCurrency": "INR",
             "address": { "@type": "PostalAddress", "addressLocality": "Bhugaon, Paud Road", "addressRegion": "Pune", "addressCountry": "IN" }
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
-            "@type": "Residence",
-            "name": "SKYi Manas Lake & SKYi Manas Lake NA Bungalow Plots",
-            "address": { "@type": "PostalAddress", "addressLocality": "Bhukum / Bavdhan, Paud Road", "addressRegion": "Pune", "addressCountry": "IN" }
+            "@type": "RealEstateListing",
+            "name": "SKYi Star Town NA Villa Plots Bhugaon",
+            "price": "9500000",
+            "priceCurrency": "INR",
+            "address": { "@type": "PostalAddress", "addressLocality": "Bhugaon Foothills", "addressRegion": "Pune", "addressCountry": "IN" }
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
-            "@type": "Residence",
-            "name": "SKYi Park, SKYi Iris & SKYi Five Baner",
+            "@type": "RealEstateListing",
+            "name": "SKYi Tigers Nest Hillside Sanctuaries",
+            "price": "14500000",
+            "priceCurrency": "INR",
+            "address": { "@type": "PostalAddress", "addressLocality": "Bhugaon Hilltop", "addressRegion": "Pune", "addressCountry": "IN" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "RealEstateListing",
+            "name": "SKYi Valley PMRDA NA Plots Pirangut",
+            "price": "9500000",
+            "priceCurrency": "INR",
+            "address": { "@type": "PostalAddress", "addressLocality": "Pirangut, Paud Road", "addressRegion": "Pune", "addressCountry": "IN" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "RealEstateListing",
+            "name": "SKYi Lakeside Meadows NA Plots Kasarsai Dam",
+            "price": "9500000",
+            "priceCurrency": "INR",
+            "address": { "@type": "PostalAddress", "addressLocality": "Kasarsai Dam, Hinjewadi Extension", "addressRegion": "Pune", "addressCountry": "IN" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "RealEstateListing",
+            "name": "SKYi Ridge Urban Villa Plots Sus Bavdhan",
+            "price": "11000000",
+            "priceCurrency": "INR",
+            "address": { "@type": "PostalAddress", "addressLocality": "Sus / Bavdhan", "addressRegion": "Pune", "addressCountry": "IN" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "RealEstateListing",
+            "name": "SKYi Park & SKYi Iris Baner",
+            "price": "9800000",
+            "priceCurrency": "INR",
             "address": { "@type": "PostalAddress", "addressLocality": "Baner / Bavdhan", "addressRegion": "Pune", "addressCountry": "IN" }
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
-            "@type": "Residence",
-            "name": "SKYi PWC Towers & SKYi Aura Heights",
-            "address": { "@type": "PostalAddress", "addressLocality": "Bhugaon / Bavdhan", "addressRegion": "Pune", "addressCountry": "IN" }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Residence",
-            "name": "Skyi Star City",
-            "address": { "@type": "PostalAddress", "addressLocality": "Dhayari", "addressRegion": "Pune", "addressCountry": "IN" }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Residence",
-            "name": "SKYi Five Racecourse, SKYi Nilay & SKYi Aquila",
-            "address": { "@type": "PostalAddress", "addressLocality": "Racecourse / Bavdhan", "addressRegion": "Pune", "addressCountry": "IN" }
+            "@type": "RealEstateListing",
+            "name": "Skyi Star City Dhayari",
+            "price": "4200000",
+            "priceCurrency": "INR",
+            "address": { "@type": "PostalAddress", "addressLocality": "Dhayari, Sinhagad Road", "addressRegion": "Pune", "addressCountry": "IN" }
           }
         }
       ]
@@ -173,9 +228,9 @@ const jsonLdSchema = {
       "@id": "https://skyidevelopers.in/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://skyidevelopers.in/" },
-        { "@type": "ListItem", "position": 2, "name": "Pune Real Estate", "item": "https://skyidevelopers.in/#portfolio" },
-        { "@type": "ListItem", "position": 3, "name": "NA Bungalow Plots Bhukum", "item": "https://skyidevelopers.in/#plot-estimator" },
-        { "@type": "ListItem", "position": 4, "name": "Skyi Songbirds Bhugaon", "item": "https://skyidevelopers.in/#portfolio" }
+        { "@type": "ListItem", "position": 2, "name": "Skyi Developers Projects", "item": "https://skyidevelopers.in/projects" },
+        { "@type": "ListItem", "position": 3, "name": "NA Bungalow Plots Bhukum", "item": "https://skyidevelopers.in/na-plots-bhukum" },
+        { "@type": "ListItem", "position": 4, "name": "Skyi Songbirds Bhugaon", "item": "https://skyidevelopers.in/songbirds" }
       ]
     },
     {
@@ -220,6 +275,14 @@ const jsonLdSchema = {
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "SKYi Townships offer 70%+ open green space, organic waste processing, solar electricity grids, 24/7 security, clubhouse, infinity swimming pools, sports arenas, and bird sanctuaries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can NRIs buy PMRDA NA Bungalow Plots in Pune through SKYi Developers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Non-Resident Indians (NRIs) and Overseas Citizens of India (OCIs) holding valid Indian passports can legally purchase PMRDA-approved residential NA bungalow plots under RBI and FEMA general permission using NRE/NRO banking channels."
           }
         }
       ]
