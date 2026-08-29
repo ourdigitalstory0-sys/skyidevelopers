@@ -309,8 +309,8 @@ export default function SEOContent() {
         <div className="trust-item">
           <Shield size={22} />
           <div>
-            <p className="trust-title">CRISIL Rated &amp; PMRDA Approved</p>
-            <p className="trust-sub">100% Clear Title 7/12 Extracts</p>
+            <p className="trust-title">MahaRERA &amp; PMRDA Approved</p>
+            <p className="trust-sub">100% Clear Title 7/12 &amp; Escrow Protection</p>
           </div>
         </div>
       </div>

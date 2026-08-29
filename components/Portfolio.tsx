@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import type { MouseEvent as ReactMouseEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, X, MapPin, Building2, Home, Star, Calendar, FileText } from 'lucide-react';
+import { ArrowRight, X, MapPin, Building2, Home, Star, Calendar, FileText, ShieldCheck } from 'lucide-react';
 import { getProjectImage } from '../utils/dynamicImages';
 import './Portfolio.css';
 
@@ -19,6 +19,7 @@ interface Project {
   seoContent: string;
   status: 'Ongoing' | 'Delivered' | 'Launching Soon';
   year: string;
+  reraNumber: string;
 }
 
 const PROJECTS: Project[] = [
@@ -33,6 +34,7 @@ const PROJECTS: Project[] = [
     amenities: ['5-Acre Poona Western Club', 'Sports Academies (Football, Cricket, Tennis)', 'Zero Waste Campus', '20+ On-Campus Convenience Shops'],
     seoContent: 'The Skyi Songbirds project in Bhugaon, Paud Road, Pune, is a luxury residential township surrounded by the Sahyadri Hills and the expansive 7,000-acre NDA forest. Located just 10 minutes from Kothrud and Chandani Chowk near Bavdhan, this project offers 1, 3 & 4 BHK sustainable homes with zero-waste architecture and green vistas.',
     status: 'Ongoing', year: '2018',
+    reraNumber: 'MahaRERA: P52100000769 (Ph A) / P52100001117 (Ph B) / P52100019348 (Ph E)',
   },
   {
     title: 'SKYi Manas Lake',
@@ -45,6 +47,7 @@ const PROJECTS: Project[] = [
     amenities: ['Lakeside Promenade & Picnic Lawns', 'CRISIL & IGBC Platinum Certified', 'Zero-Waste Architecture', 'Full-Service Clubhouse & Amphitheatre'],
     seoContent: 'SKYi Manas Lake is an iconic 90+ acre residential township situated on Paud Road at the junction of Bavdhan and Bhukum, Pune, just minutes from Chandani Chowk. Recognized with IGBC Platinum certification, this lakeside community features east-west oriented apartments for maximum natural light and cross ventilation.',
     status: 'Delivered', year: '2015',
+    reraNumber: 'MahaRERA: P52100000513 / P52100000514 / P52100026954 / P52100052033',
   },
   {
     title: 'SKYi Manas Lake NA Bungalow Plots',
@@ -62,6 +65,7 @@ const PROJECTS: Project[] = [
     ],
     seoContent: 'SKYi Manas Lake NA Bungalow Plots in Bhukum, Paud Road, Pune offer a rare opportunity to invest in PMRDA-sanctioned Non-Agricultural (NA) residential plots within a 90+ acre IGBC Platinum-certified lakeside township. Located just minutes from Chandani Chowk, Kothrud, and Bavdhan, these plots come with complete infrastructure — wide internal roads, street lighting, underground utilities, and clear legal titles — allowing you to design and construct your custom luxury villa or lakeside bungalow.',
     status: 'Launching Soon', year: '2025',
+    reraNumber: 'PMRDA Sanctioned Collector NA Layout / MahaRERA Compliant',
   },
   {
     title: 'SKYi Star Town NA Villa Plots',
@@ -79,6 +83,7 @@ const PROJECTS: Project[] = [
     ],
     seoContent: 'SKYi Star Town NA Villa Plots in Bhugaon, Paud Road, Pune offer luxury clear title residential plotting in West Pune. Overlooking the NDA forest reserve and 10 minutes from Kothrud, these plots are 100% bank-loan approved for immediate villa construction.',
     status: 'Ongoing', year: '2024',
+    reraNumber: 'MahaRERA: P52100000769 / PMRDA Sanctioned Collector NA Layout',
   },
   {
     title: 'SKYi Lakeside Meadows NA Plots',
@@ -96,6 +101,7 @@ const PROJECTS: Project[] = [
     ],
     seoContent: 'SKYi Lakeside Meadows NA Plots at Kasarsai Dam offer serene lakefront villa plots close to Hinjewadi Phase 3 IT Park. PMRDA approved with 100% clear title 7/12 extracts.',
     status: 'Launching Soon', year: '2025',
+    reraNumber: 'PMRDA Approved Collector NA Layout / Clear 7/12 RERA Compliant',
   },
   {
     title: 'SKYi Park & SKYi Iris',
@@ -108,6 +114,7 @@ const PROJECTS: Project[] = [
     amenities: ['Rooftop Infinity Lounge', 'High-Speed Elevators & EV Charging', 'Zero-Passage Efficient Floor Plans', 'Multi-Tier Security Systems'],
     seoContent: 'SKYi Park and SKYi Iris are landmark boutique residential projects developed in Baner and Bavdhan, Pune. Offering 2 and 3 BHK luxury residences situated close to Aundh, Pashan, Sus, and Hinjewadi IT Park, these homes showcase SKYi\'s signature zero-wastage design and high-end urban lifestyle amenities.',
     status: 'Delivered', year: '2016',
+    reraNumber: 'MahaRERA: P52100019348 (SKYi Iris) / P52100000449 (SKYi Park)',
   },
   {
     title: 'SKYi Aura Heights & SKYi Tigers Nest',
@@ -120,6 +127,7 @@ const PROJECTS: Project[] = [
     amenities: ['180-Degree Panoramic Hill Views', 'Private Deck Balconies', 'Clubhouse & Heated Pool', 'Private Gated Security Gatehouse'],
     seoContent: 'SKYi Aura Heights and SKYi Tigers Nest in Bhugaon / Bavdhan represent luxury hillside residential living along Paud Road, Pune. Positioned next to the NDA forest with breathtaking mountain and valley views, these 3 and 4 BHK luxury residences provide pristine air quality and rapid connectivity to Kothrud and Chandani Chowk.',
     status: 'Ongoing', year: '2020',
+    reraNumber: 'MahaRERA: P52100000769 / P52100001117 (Songbirds Hillside Enclave)',
   },
   {
     title: 'SKYi PWC Towers & Hillside',
@@ -132,6 +140,7 @@ const PROJECTS: Project[] = [
     amenities: ['Direct Access to Poona Western Club', 'Olympic-Length Swimming Pool', 'Squash & Badminton Courts', 'Fine Dining & Banquet Lawns'],
     seoContent: 'SKYi PWC Towers and PWC Towers Hillside are elite club-integrated residences situated inside the Skyi Songbirds campus at Bhugaon, Paud Road, Pune. Overlooking the 5-acre Poona Western Club sports complex, these residences offer instant access to world-class sports academies, fine dining, and wellness facilities.',
     status: 'Ongoing', year: '2022',
+    reraNumber: 'MahaRERA: P52100000643 / P52100000805',
   },
   {
     title: 'Skyi Star City',
@@ -144,6 +153,7 @@ const PROJECTS: Project[] = [
     amenities: ['Zero-Wastage Home Designs', '70% Open & Green Spaces', 'Dedicated Night Garden', 'On-Campus Retail & Convenience Stores'],
     seoContent: 'SKYi Star City is an integrated 20-acre residential township located in Dhayari, Pune. Built on the core philosophy of Zero-Wastage design, these 2 and 3 BHK homes eliminate unnecessary passages to maximize usable living space.',
     status: 'Delivered', year: '2012',
+    reraNumber: 'MahaRERA: P52100026727 / P52100029481 / P52100029474 / P52100034274 / P52100050099',
   },
 ];
 
@@ -235,6 +245,13 @@ function TiltCard({
         </div>
         <h3>{project.title}</h3>
         <p className="card-desc">{project.description}</p>
+        
+        {/* MahaRERA / PMRDA Compliance Pill */}
+        <div className="card-rera-pill">
+          <ShieldCheck size={13} className="text-emerald-400" />
+          <span>{project.reraNumber.split('/')[0].trim()}</span>
+        </div>
+
         <div className="card-config">
           <Home size={13} />
           <span>{project.configuration}</span>
@@ -352,13 +369,30 @@ export default function Portfolio({ onOpenSiteVisit, onOpenFloorPlan }: Portfoli
               </div>
 
               <div className="modal-body">
+                {/* MahaRERA Legal Registration Box */}
+                <div className="modal-rera-highlight">
+                  <div className="modal-rera-badge">
+                    <ShieldCheck size={18} />
+                    <strong>MahaRERA &amp; Legal Sanction</strong>
+                  </div>
+                  <p className="modal-rera-text">{selected.reraNumber}</p>
+                  <a
+                    href="https://maharera.mahaonline.gov.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="modal-rera-link"
+                  >
+                    Verify on Official MahaRERA Portal (maharera.mahaonline.gov.in) →
+                  </a>
+                </div>
+
                 <div className="modal-section">
                   <h4 className="modal-section-title">Project Overview</h4>
                   <p className="modal-seo">{selected.seoContent}</p>
                 </div>
 
                 <div className="modal-section">
-                  <h4 className="modal-section-title">Amenities & Sustainability Highlights</h4>
+                  <h4 className="modal-section-title">Amenities &amp; Sustainability Highlights</h4>
                   <div className="modal-amenities">
                     {selected.amenities.map(a => (
                       <div className="modal-amenity-chip" key={a}>

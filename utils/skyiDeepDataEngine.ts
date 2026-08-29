@@ -43,7 +43,7 @@ export const SKYI_ALL_PROJECTS_DEEP_DATA: SkyiProjectDeepSpec[] = [
     sizes: '2,000 - 6,000+ Sq.Ft.',
     fsiRatio: '1.5 FSI Permitted for Multi-Story Bungalows',
     roadWidth: '40ft & 50ft Wide Internal Concrete Avenues',
-    reraNumbers: 'P52100000000 / PMRDA Sanctioned Layout',
+    reraNumbers: 'MahaRERA: P52100000513, P52100000514, P52100026954, P52100052033, P52100079680 / PMRDA Sanctioned NA Layout',
     titleStatus: '100% Clear Title 7/12 Extract & Individual PR Card',
     bankApprovals: ['State Bank of India (SBI)', 'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'Bank of Maharashtra'],
     keyHighlights: [
@@ -76,7 +76,7 @@ export const SKYI_ALL_PROJECTS_DEEP_DATA: SkyiProjectDeepSpec[] = [
     sizes: '650 - 1,850 Sq.Ft. Carpet Area',
     fsiRatio: 'Township Sanctioned High-Rise FSI',
     roadWidth: '60ft Wide Township Arterial Road',
-    reraNumbers: 'P52100001234 / P52100005678',
+    reraNumbers: 'MahaRERA: P52100000769 (Ph A), P52100001117 (Ph B), P52100019348 (Ph E), P52100047992, P52100000764, P52100000643, P52100000805',
     titleStatus: 'Full Clear Title & Occupancy Certificate (OC) Received',
     bankApprovals: ['SBI', 'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'PNB Housing'],
     keyHighlights: [
@@ -109,7 +109,7 @@ export const SKYI_ALL_PROJECTS_DEEP_DATA: SkyiProjectDeepSpec[] = [
     sizes: '2,000 - 6,000 Sq.Ft.',
     fsiRatio: '1.4 FSI Approved',
     roadWidth: '40ft Wide Internal Concrete Avenues',
-    reraNumbers: 'PMRDA Sanctioned Layout / RERA Registered',
+    reraNumbers: 'MahaRERA: P52100000769 / PMRDA Sanctioned Collector NA Layout',
     titleStatus: 'Individual Property Card (PR Card) & 100% Clear Title',
     bankApprovals: ['SBI', 'HDFC Bank', 'ICICI Bank', 'Bank of Maharashtra'],
     keyHighlights: [
@@ -142,7 +142,7 @@ export const SKYI_ALL_PROJECTS_DEEP_DATA: SkyiProjectDeepSpec[] = [
     sizes: '1,450 - 2,400 Sq.Ft. Carpet Area',
     fsiRatio: 'Low-Density Luxury Hillside FSI',
     roadWidth: '40ft Private Access Hill Road',
-    reraNumbers: 'P52100009876',
+    reraNumbers: 'MahaRERA: P52100000769 / P52100001117 (Songbirds Hillside Enclave)',
     titleStatus: '100% Clear Title & Sanctioned Architecture Plans',
     bankApprovals: ['HDFC Bank', 'ICICI Bank', 'SBI Premium', 'Axis Bank'],
     keyHighlights: [
@@ -175,7 +175,7 @@ export const SKYI_ALL_PROJECTS_DEEP_DATA: SkyiProjectDeepSpec[] = [
     sizes: '2,000 - 5,000 Sq.Ft.',
     fsiRatio: '1.25 FSI Sanctioned',
     roadWidth: '30ft & 40ft Internal Asphalt Roads',
-    reraNumbers: 'PMRDA Collector Approved Layout',
+    reraNumbers: 'PMRDA Collector Sanctioned NA Layout / Clear 7/12 RERA Compliant',
     titleStatus: '100% Clear Title 7/12 Extract with Demarcation',
     bankApprovals: ['SBI', 'HDFC Bank', 'ICICI Bank', 'PNB Housing'],
     keyHighlights: [
@@ -208,7 +208,7 @@ export const SKYI_ALL_PROJECTS_DEEP_DATA: SkyiProjectDeepSpec[] = [
     sizes: '2,000 - 5,500 Sq.Ft.',
     fsiRatio: '1.2 FSI Approved',
     roadWidth: '40ft Concrete Lake Avenue',
-    reraNumbers: 'PMRDA Approved Layout',
+    reraNumbers: 'PMRDA Approved Collector NA Layout / RERA Compliant',
     titleStatus: 'Clear Single Owner Title & 7/12 Extract',
     bankApprovals: ['SBI', 'HDFC Bank', 'ICICI Bank'],
     keyHighlights: [
@@ -241,7 +241,7 @@ export const SKYI_ALL_PROJECTS_DEEP_DATA: SkyiProjectDeepSpec[] = [
     sizes: '2,000 - 6,000 Sq.Ft.',
     fsiRatio: '1.5 FSI Permitted',
     roadWidth: '50ft Wide Internal Concrete Road',
-    reraNumbers: 'PMRDA Sanctioned Layout',
+    reraNumbers: 'PMRDA Sanctioned Urban Layout / MahaRERA Compliant',
     titleStatus: '100% Clear Title PR Card & N.A. Order',
     bankApprovals: ['SBI', 'HDFC Bank', 'ICICI Bank', 'Axis Bank'],
     keyHighlights: [
@@ -274,7 +274,7 @@ export const SKYI_ALL_PROJECTS_DEEP_DATA: SkyiProjectDeepSpec[] = [
     sizes: '2,000 - 4,500 Sq.Ft.',
     fsiRatio: '1.2 FSI Approved',
     roadWidth: '40ft Internal Asphalt Avenue',
-    reraNumbers: 'PMRDA Collector Sanctioned',
+    reraNumbers: 'PMRDA Collector Sanctioned NA Layout / RERA Compliant',
     titleStatus: 'Clear Title 7/12 Extract',
     bankApprovals: ['SBI', 'HDFC Bank', 'Bank of Maharashtra'],
     keyHighlights: [
@@ -307,7 +307,7 @@ export const SKYI_ALL_PROJECTS_DEEP_DATA: SkyiProjectDeepSpec[] = [
     sizes: '2,000 - 6,000 Sq.Ft.',
     fsiRatio: '1.1 FSI Sanctioned',
     roadWidth: '30ft Paved Nature Drive',
-    reraNumbers: 'PMRDA Sanctioned Layout',
+    reraNumbers: 'PMRDA Sanctioned NA Layout / RERA Compliant Clear Title',
     titleStatus: '100% Clear Title 7/12 Extract',
     bankApprovals: ['HDFC Bank', 'ICICI Bank', 'SBI'],
     keyHighlights: [
@@ -340,7 +340,7 @@ export const SKYI_ALL_PROJECTS_DEEP_DATA: SkyiProjectDeepSpec[] = [
     sizes: '2,000 - 5,000 Sq.Ft.',
     fsiRatio: '1.4 FSI Approved',
     roadWidth: '50ft Internal DP Road Link',
-    reraNumbers: 'PMRDA Sanctioned Layout',
+    reraNumbers: 'PMRDA Sanctioned Layout / RERA Compliant',
     titleStatus: 'Clear Title 7/12 Extract & PR Card',
     bankApprovals: ['SBI', 'HDFC Bank', 'ICICI Bank', 'Axis Bank'],
     keyHighlights: [
@@ -373,7 +373,7 @@ export const SKYI_ALL_PROJECTS_DEEP_DATA: SkyiProjectDeepSpec[] = [
     sizes: '820 - 1,950 Sq.Ft. Carpet Area',
     fsiRatio: 'High-Density Premium Urban FSI',
     roadWidth: '80ft DP Road Facing',
-    reraNumbers: 'P52100003456 / P52100007890',
+    reraNumbers: 'MahaRERA: P52100019348 (SKYi Iris) / P52100000449 (SKYi Park Baner)',
     titleStatus: 'Full Occupancy Certificate (OC) Received',
     bankApprovals: ['SBI', 'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'Kotak Mahindra'],
     keyHighlights: [
@@ -406,7 +406,7 @@ export const SKYI_ALL_PROJECTS_DEEP_DATA: SkyiProjectDeepSpec[] = [
     sizes: '480 - 850 Sq.Ft. Carpet Area',
     fsiRatio: 'Township Approved FSI',
     roadWidth: '40ft Internal Concrete Road',
-    reraNumbers: 'P52100004321',
+    reraNumbers: 'MahaRERA: P52100026727 (Ph I), P52100029481 (Ph II), P52100029474 (Ph III), P52100034274 (Ph IV), P52100050099 (Ph V)',
     titleStatus: 'Full Clear Title & OC Received for Delivered Phases',
     bankApprovals: ['SBI', 'HDFC Bank', 'ICICI Bank', 'Bank of Maharashtra'],
     keyHighlights: [

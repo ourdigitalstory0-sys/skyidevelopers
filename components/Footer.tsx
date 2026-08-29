@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Share2, Globe, Play, Send, AlertCircle, Loader2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Share2, Globe, Play, Send, AlertCircle, Loader2, ShieldCheck, ExternalLink } from 'lucide-react';
 import { sanitizeInput } from '../utils/security';
 import './Footer.css';
 
@@ -23,6 +23,39 @@ const PROJECTS_LIST = [
   { value: 'manaslake',  label: 'Manas Lake' },
   { value: 'starcity',   label: 'Skyi Star City' },
   { value: 'other',      label: 'Other / General Enquiry' },
+];
+
+const MAHARERA_DISCLOSURES = [
+  {
+    name: 'Skyi Songbirds (Bhugaon)',
+    rera: 'P52100000769 (Ph A) | P52100001117 (Ph B) | P52100019348 (Ph E) | P52100047992 | P52100000764 | P52100000643 | P52100000805',
+    type: 'Township / Residential Apartments',
+  },
+  {
+    name: 'SKYi Manas Lake (Bhukum / Bavdhan)',
+    rera: 'P52100000513 (Ph II) | P52100000514 (Ph III) | P52100026954 (Ph VI) | P52100052033 (Ph VIII) | P52100079680',
+    type: 'Lakefront Township & NA Plots',
+  },
+  {
+    name: 'SKYi Star City (Dhayari / Kirkatwadi)',
+    rera: 'P52100026727 (Ph I) | P52100029481 (Ph II) | P52100029474 (Ph III) | P52100034274 (Ph IV) | P52100050099 (Ph V)',
+    type: 'Integrated Residential Township',
+  },
+  {
+    name: 'SKYi Iris & SKYi Park (Baner / Bavdhan)',
+    rera: 'P52100019348 (SKYi Iris) | P52100000449 (SKYi Park)',
+    type: 'Urban Luxury Residences',
+  },
+  {
+    name: 'SKYi Tigers Nest & PWC Towers (Bhugaon)',
+    rera: 'P52100000769 | P52100000643 | P52100000805 (Club Residences)',
+    type: 'Luxury Hillside & Club Residences',
+  },
+  {
+    name: 'SKYi PMRDA NA Bungalow Plots (Bhukum / Pirangut / Kasarsai / Sus)',
+    rera: 'PMRDA Sanctioned Collector NA Layouts / 100% Clear Title 7/12 RERA Compliant',
+    type: 'PMRDA Sanctioned Villa Plots',
+  },
 ];
 
 type Fields = { name: string; email: string; phone: string; project: string; message: string };
@@ -270,25 +303,13 @@ export default function Footer({ onOpenPrivacyModal }: FooterProps) {
                   </form>
                 </>
               ) : (
-                /* Success state */
                 <motion.div
                   className="form-success-state"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4 }}
                 >
-                  <div className="success-icon-wrap">✓</div>
                   <h3>Thank You!</h3>
                   <p>Your enquiry has been received. Our team will get back to you shortly.</p>
-                  <button
-                    className="form-reset-btn"
-                    onClick={() => {
-                      setSubmitted(false);
-                      setForm({ name: '', email: '', phone: '', project: '', message: '' });
-                    }}
-                  >
-                    Send Another Message
-                  </button>
                 </motion.div>
               )}
             </div>
@@ -296,7 +317,47 @@ export default function Footer({ onOpenPrivacyModal }: FooterProps) {
         </div>
       </section>
 
-      {/* ══ Footer Bottom Bar ══ */}
+      <div className="footer-maharera-container">
+        <div className="footer-maharera-inner">
+          <div className="footer-maharera-header">
+            <div className="footer-maharera-title-wrap">
+              <ShieldCheck size={22} className="text-emerald-400" />
+              <div>
+                <h4>MahaRERA Regulatory Compliance &amp; Official Registrations</h4>
+                <p>
+                  All projects by Skyi Developers are registered under the Maharashtra Real Estate Regulatory Authority (MahaRERA). Details and sanctions available at{' '}
+                  <a
+                    href="https://maharera.mahaonline.gov.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="maharera-official-link"
+                  >
+                    maharera.mahaonline.gov.in <ExternalLink size={12} />
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="footer-maharera-grid">
+            {MAHARERA_DISCLOSURES.map((item) => (
+              <div key={item.name} className="maharera-card">
+                <div className="maharera-card-name">{item.name}</div>
+                <div className="maharera-card-type">{item.type}</div>
+                <div className="maharera-card-reg">
+                  <span className="maharera-tag">MahaRERA:</span>
+                  <code>{item.rera}</code>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="maharera-disclaimer-note">
+            * Disclaimer: The artistic impressions, specifications, floor plans, and amenities shown on this website are indicative and subject to change as per competent authority approvals and MahaRERA guidelines. Clear title documentation and PMRDA sanction orders are available for verification at our site offices.
+          </p>
+        </div>
+      </div>
+
       <div className="footer-bottom">
         <div className="fb-container">
           <div className="fb-left">
@@ -312,7 +373,7 @@ export default function Footer({ onOpenPrivacyModal }: FooterProps) {
                 className="fb-privacy-btn"
                 onClick={onOpenPrivacyModal}
               >
-                Privacy &amp; RERA Disclosures
+                Privacy &amp; MahaRERA Disclosures
               </button>
             )}
             <a href="#home">Back to Top ↑</a>

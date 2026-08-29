@@ -19,6 +19,7 @@ export interface ProgrammaticItem {
   geocoordinates: { latitude: number; longitude: number };
   keywords: string[];
   reraApproved: boolean;
+  reraNumber?: string;
   pmrdaSanctioned: boolean;
   clearTitle712: boolean;
 }

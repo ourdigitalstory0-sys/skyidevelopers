@@ -136,6 +136,7 @@ const jsonLdSchema = {
           "itemOffered": {
             "@type": "RealEstateListing",
             "name": "SKYi Manas Lake PMRDA NA Bungalow Plots Bhukum",
+            "identifier": "MahaRERA: P52100000513, P52100000514, P52100026954, P52100052033",
             "price": "9500000",
             "priceCurrency": "INR",
             "address": { "@type": "PostalAddress", "addressLocality": "Bhukum, Paud Road", "addressRegion": "Pune", "addressCountry": "IN" }
@@ -146,6 +147,7 @@ const jsonLdSchema = {
           "itemOffered": {
             "@type": "RealEstateListing",
             "name": "Skyi Songbirds Eco Township Bhugaon",
+            "identifier": "MahaRERA: P52100000769 (Ph A), P52100001117 (Ph B), P52100019348 (Ph E), P52100047992",
             "price": "6800000",
             "priceCurrency": "INR",
             "address": { "@type": "PostalAddress", "addressLocality": "Bhugaon, Paud Road", "addressRegion": "Pune", "addressCountry": "IN" }
@@ -156,6 +158,7 @@ const jsonLdSchema = {
           "itemOffered": {
             "@type": "RealEstateListing",
             "name": "SKYi Star Town NA Villa Plots Bhugaon",
+            "identifier": "MahaRERA: P52100000769 / PMRDA Sanctioned Collector NA Layout",
             "price": "9500000",
             "priceCurrency": "INR",
             "address": { "@type": "PostalAddress", "addressLocality": "Bhugaon Foothills", "addressRegion": "Pune", "addressCountry": "IN" }
@@ -166,6 +169,7 @@ const jsonLdSchema = {
           "itemOffered": {
             "@type": "RealEstateListing",
             "name": "SKYi Tigers Nest Hillside Sanctuaries",
+            "identifier": "MahaRERA: P52100000769 / P52100001117 (Songbirds Hillside Enclave)",
             "price": "14500000",
             "priceCurrency": "INR",
             "address": { "@type": "PostalAddress", "addressLocality": "Bhugaon Hilltop", "addressRegion": "Pune", "addressCountry": "IN" }
@@ -176,6 +180,7 @@ const jsonLdSchema = {
           "itemOffered": {
             "@type": "RealEstateListing",
             "name": "SKYi Valley PMRDA NA Plots Pirangut",
+            "identifier": "PMRDA Collector Sanctioned NA Layout / RERA Compliant",
             "price": "9500000",
             "priceCurrency": "INR",
             "address": { "@type": "PostalAddress", "addressLocality": "Pirangut, Paud Road", "addressRegion": "Pune", "addressCountry": "IN" }
@@ -186,6 +191,7 @@ const jsonLdSchema = {
           "itemOffered": {
             "@type": "RealEstateListing",
             "name": "SKYi Lakeside Meadows NA Plots Kasarsai Dam",
+            "identifier": "PMRDA Approved Collector NA Layout / Clear 7/12 RERA Compliant",
             "price": "9500000",
             "priceCurrency": "INR",
             "address": { "@type": "PostalAddress", "addressLocality": "Kasarsai Dam, Hinjewadi Extension", "addressRegion": "Pune", "addressCountry": "IN" }
@@ -196,6 +202,7 @@ const jsonLdSchema = {
           "itemOffered": {
             "@type": "RealEstateListing",
             "name": "SKYi Ridge Urban Villa Plots Sus Bavdhan",
+            "identifier": "PMRDA Sanctioned Urban Layout / MahaRERA Compliant",
             "price": "11000000",
             "priceCurrency": "INR",
             "address": { "@type": "PostalAddress", "addressLocality": "Sus / Bavdhan", "addressRegion": "Pune", "addressCountry": "IN" }
@@ -206,6 +213,7 @@ const jsonLdSchema = {
           "itemOffered": {
             "@type": "RealEstateListing",
             "name": "SKYi Park & SKYi Iris Baner",
+            "identifier": "MahaRERA: P52100019348 (SKYi Iris) / P52100000449 (SKYi Park)",
             "price": "9800000",
             "priceCurrency": "INR",
             "address": { "@type": "PostalAddress", "addressLocality": "Baner / Bavdhan", "addressRegion": "Pune", "addressCountry": "IN" }
@@ -216,6 +224,7 @@ const jsonLdSchema = {
           "itemOffered": {
             "@type": "RealEstateListing",
             "name": "Skyi Star City Dhayari",
+            "identifier": "MahaRERA: P52100026727, P52100029481, P52100029474, P52100034274, P52100050099",
             "price": "4200000",
             "priceCurrency": "INR",
             "address": { "@type": "PostalAddress", "addressLocality": "Dhayari, Sinhagad Road", "addressRegion": "Pune", "addressCountry": "IN" }
@@ -253,6 +262,14 @@ const jsonLdSchema = {
       "@type": "FAQPage",
       "@id": "https://skyidevelopers.in/#faq",
       "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are Skyi Developers projects registered with MahaRERA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all residential townships and plotted estates by Skyi Developers are registered under Maharashtra Real Estate Regulatory Authority (MahaRERA). Registration details include Skyi Songbirds (P52100000769, P52100001117, P52100019348, P52100047992), SKYi Manas Lake (P52100000513, P52100000514, P52100026954, P52100052033), SKYi Star City (P52100026727, P52100029481, P52100029474, P52100034274, P52100050099), and SKYi Iris Baner (P52100019348). Official documents are verifiable on maharera.mahaonline.gov.in."
+          }
+        },
         {
           "@type": "Question",
           "name": "Are SKYi Manas Lake NA Bungalow Plots PMRDA approved with clear title?",
