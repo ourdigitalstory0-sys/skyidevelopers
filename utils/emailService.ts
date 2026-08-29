@@ -18,6 +18,7 @@ const TARGET_EMAIL = 'propsmartrealty@gmail.com';
 
 /**
  * Sends a stylized HTML email alert to propsmartrealty@gmail.com using Nodemailer & Gmail App Password.
+ * Uses STARTTLS on port 587 — most reliable method for Vercel serverless environments.
  */
 export async function sendLeadEmailNotification(params: SendLeadEmailParams): Promise<boolean> {
   const gmailUser = process.env.GMAIL_USER || TARGET_EMAIL;
@@ -27,20 +28,32 @@ export async function sendLeadEmailNotification(params: SendLeadEmailParams): Pr
   logger.log(`[Email Service] Processing Lead ${params.leadId}`, params);
 
   if (!gmailPass) {
-    logger.log(`[Email Service Warning] GMAIL_APP_PASSWORD is not set in environment variables. Lead ${params.leadId} logged successfully.`);
+    logger.log(
+      `[Email Service Warning] GMAIL_APP_PASSWORD is not set in environment variables. Lead ${params.leadId} logged successfully. ` +
+      `Add GMAIL_USER and GMAIL_APP_PASSWORD to your .env.local (local) or Vercel environment variables (production).`
+    );
     return false;
   }
 
   try {
+    // Use STARTTLS port 587 — more reliable on serverless/Vercel than SSL port 465
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
-      port: 465,
-      secure: true, // SSL
+      port: 587,
+      secure: false, // STARTTLS
       auth: {
         user: gmailUser,
-        pass: gmailPass,
+        pass: gmailPass, // 16-character Gmail App Password (not Gmail account password)
       },
+      tls: {
+        rejectUnauthorized: true,
+      },
+      connectionTimeout: 10000, // 10 second timeout for serverless
+      greetingTimeout: 10000,
+      socketTimeout: 10000,
     });
+
+    const nowIST = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
 
     const htmlContent = `
       <!DOCTYPE html>
@@ -60,6 +73,7 @@ export async function sendLeadEmailNotification(params: SendLeadEmailParams): Pr
           .field-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #4fc3f7; margin-bottom: 4px; font-weight: 700; }
           .field-value { font-size: 16px; color: #ffffff; font-weight: 600; }
           .field-value-highlight { font-size: 18px; color: #ff6b35; font-weight: 800; }
+          .cta { background: linear-gradient(135deg, #ff6b35, #d97706); color: #ffffff !important; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-weight: 800; font-size: 15px; display: inline-block; margin-top: 8px; }
           .footer { background: #070b1f; padding: 18px 28px; text-align: center; font-size: 12px; color: #9aa5c4; border-top: 1px solid rgba(255,255,255,0.08); }
         </style>
       </head>
@@ -79,7 +93,12 @@ export async function sendLeadEmailNotification(params: SendLeadEmailParams): Pr
 
             <div class="field-group">
               <div class="field-label">Mobile Phone Number</div>
-              <div class="field-value-highlight"><a href="tel:${params.phone}" style="color: #ff6b35; text-decoration: none;">+91 ${params.phone}</a></div>
+              <div class="field-value-highlight">
+                <a href="tel:+91${params.phone}" style="color: #ff6b35; text-decoration: none;">+91 ${params.phone}</a>
+              </div>
+              <a href="https://wa.me/91${params.phone}?text=Hi%20${encodeURIComponent(params.name)}%2C%20I%20am%20calling%20regarding%20your%20SKYi%20property%20enquiry." class="cta" style="font-size: 13px; padding: 8px 18px; margin-top: 6px;">
+                💬 Open WhatsApp Chat
+              </a>
             </div>
 
             ${params.email ? `
@@ -96,7 +115,7 @@ export async function sendLeadEmailNotification(params: SendLeadEmailParams): Pr
             ${params.visitDate ? `
             <div class="field-group">
               <div class="field-label">Requested Site Visit Schedule</div>
-              <div class="field-value">${params.visitDate} at ${params.visitTime || '10:00 AM'} ${params.pickupNeeded ? ' (Cab Pickup Needed)' : ''}</div>
+              <div class="field-value">${params.visitDate} at ${params.visitTime || '10:00 AM'} ${params.pickupNeeded ? ' — Cab Pickup Needed ✅' : ''}</div>
             </div>` : ''}
 
             ${params.message ? `
@@ -112,7 +131,7 @@ export async function sendLeadEmailNotification(params: SendLeadEmailParams): Pr
           </div>
           <div class="footer">
             Sent automatically to <strong>propsmartrealty@gmail.com</strong> via SKYi Lead Engine<br>
-            Time: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} IST
+            Time: ${nowIST} IST
           </div>
         </div>
       </body>
@@ -120,9 +139,9 @@ export async function sendLeadEmailNotification(params: SendLeadEmailParams): Pr
     `;
 
     const mailOptions = {
-      from: `"SKYi Lead Engine" <${gmailUser}>`,
+      from: `"SKYi Lead Engine 🏠" <${gmailUser}>`,
       to: TARGET_EMAIL,
-      subject: `🚨 NEW LEAD [${params.name}] — ${params.project || 'SKYi NA Plots Pune'} (${params.phone})`,
+      subject: `🚨 NEW LEAD [${params.name}] — ${params.project || 'SKYi NA Plots Pune'} (+91 ${params.phone})`,
       html: htmlContent,
       replyTo: params.email || undefined,
     };

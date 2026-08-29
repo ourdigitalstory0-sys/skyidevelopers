@@ -20,5 +20,11 @@ declare module 'nodemailer' {
       user?: string;
       pass?: string;
     };
+    tls?: {
+      rejectUnauthorized?: boolean;
+    };
+    connectionTimeout?: number;
+    greetingTimeout?: number;
+    socketTimeout?: number;
   }): Transporter;
 }
