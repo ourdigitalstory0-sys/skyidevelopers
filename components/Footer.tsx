@@ -247,7 +247,7 @@ export default function Footer({ onOpenPrivacyModal }: FooterProps) {
             viewport={{ once: true }}
             transition={{ duration: 0.95, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="form-card glass">
+            <div className="form-card">
               {!submitted ? (
                 <>
                   <h3 className="form-title">Send an Enquiry</h3>

@@ -7,31 +7,33 @@
   width: 100vw;
   height: 100vh;
   height: 100dvh;
-  background: rgba(5, 8, 22, 0.88);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(4, 7, 18, 0.94) !important;
   z-index: 100000 !important;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.25rem;
+  overflow-y: auto;
 }
 
 .ai-modal-card {
   width: 100%;
   max-width: 640px;
-  border-radius: 24px;
+  border-radius: 20px;
   max-height: 90vh;
   max-height: 90dvh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   position: relative;
-  background: #0b1120 !important;
-  border: 1px solid rgba(171, 71, 188, 0.45) !important;
+  background: #0d1527 !important;
+  border: 2px solid #ab47bc !important;
   padding: 2.25rem;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(171, 71, 188, 0.25);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), 0 0 45px rgba(171, 71, 188, 0.35);
   color: #ffffff !important;
   z-index: 100001 !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 /* Force native cursor and interaction inside modal */

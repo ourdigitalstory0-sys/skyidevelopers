@@ -187,11 +187,14 @@
   overflow-y: auto;
   border-radius: 28px 28px 0 0;
   padding: 40px 44px 44px;
-  background: rgba(10,15,40,0.96);
-  border: 1px solid rgba(255,107,53,0.2);
+  background: #0d1527 !important;
+  border: 1px solid rgba(255, 107, 53, 0.4) !important;
   border-bottom: none;
-  backdrop-filter: blur(32px);
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.9);
   scrollbar-width: none;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 .modal-sheet::-webkit-scrollbar { display: none; }
 
