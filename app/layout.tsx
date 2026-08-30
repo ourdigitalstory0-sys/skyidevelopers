@@ -267,7 +267,7 @@ const jsonLdSchema = {
           "name": "Are Skyi Developers projects registered with MahaRERA?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, all residential townships and plotted estates by Skyi Developers are registered under Maharashtra Real Estate Regulatory Authority (MahaRERA). Registration details include Skyi Songbirds (P52100000769, P52100001117, P52100019348, P52100047992), SKYi Manas Lake (P52100000513, P52100000514, P52100026954, P52100052033), SKYi Star City (P52100026727, P52100029481, P52100029474, P52100034274, P52100050099), and SKYi Iris Baner (P52100019348). Official documents are verifiable on maharera.mahaonline.gov.in."
+            "text": "Yes, all residential townships and plotted estates by Skyi Developers are registered under Maharashtra Real Estate Regulatory Authority (MahaRERA). Registration details include Skyi Songbirds (P52100000769, P52100001117, P52100019348, P52100047992), SKYi Manas Lake (P52100000513, P52100000514, P52100026954, P52100052033), SKYi Star City (P52100026727, P52100029481, P52100029474, P52100034274, P52100050099), and SKYi Iris Baner (P52100019348). Official documents are verifiable on maharera.maharashtra.gov.in."
           }
         },
         {

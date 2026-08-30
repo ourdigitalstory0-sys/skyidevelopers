@@ -164,12 +164,12 @@ export default function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyMod
 
                 <div className="rera-verification-link-box">
                   <a
-                    href="https://maharera.mahaonline.gov.in/"
+                    href="https://maharera.maharashtra.gov.in/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="rera-portal-btn"
                   >
-                    <ExternalLink size={15} /> Visit MahaRERA Official Website (maharera.mahaonline.gov.in)
+                    <ExternalLink size={15} /> Visit MahaRERA Official Website (maharera.maharashtra.gov.in)
                   </a>
                 </div>
 

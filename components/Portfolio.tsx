@@ -377,12 +377,12 @@ export default function Portfolio({ onOpenSiteVisit, onOpenFloorPlan }: Portfoli
                   </div>
                   <p className="modal-rera-text">{selected.reraNumber}</p>
                   <a
-                    href="https://maharera.mahaonline.gov.in/"
+                    href="https://maharera.maharashtra.gov.in/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="modal-rera-link"
                   >
-                    Verify on Official MahaRERA Portal (maharera.mahaonline.gov.in) →
+                    Verify on Official MahaRERA Portal (maharera.maharashtra.gov.in) →
                   </a>
                 </div>
 
