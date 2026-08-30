@@ -75,7 +75,7 @@ export default function Footer({ onOpenPrivacyModal }: FooterProps) {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (loading) return; // Prevent double-submit
 
@@ -109,7 +109,46 @@ export default function Footer({ onOpenPrivacyModal }: FooterProps) {
     }
 
     setLoading(true);
-    setTimeout(() => { setLoading(false); setSubmitted(true); }, 800);
+
+    try {
+      // 1. Dispatch via Next.js backend API (FormSubmit + SMTP)
+      await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: cleanName,
+          email: cleanEmail,
+          phone: cleanPhone || 'Not Provided',
+          project: form.project || 'General Inquiry',
+          message: form.message,
+          utmSource: 'Website Footer Contact Form',
+        }),
+      });
+      setSubmitted(true);
+    } catch {
+      // 2. Direct client-side FormSubmit fail-safe
+      try {
+        await fetch('https://formsubmit.co/ajax/propsmartrealty@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            _subject: `🔥 FOOTER ENQUIRY [${cleanName}] — ${form.project || 'General Inquiry'}`,
+            _template: 'table',
+            _captcha: 'false',
+            'Customer Name': cleanName,
+            'Email Address': cleanEmail,
+            'Phone Number': cleanPhone ? `+91 ${cleanPhone}` : 'Not Provided',
+            'Interested Project': form.project || 'General Inquiry',
+            'Message': form.message || 'None',
+          }),
+        });
+      } catch (err) {
+        console.error('Footer FormSubmit fail-safe error', err);
+      }
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const isActive = (name: string) => !!form[name as keyof Fields] || focused === name;

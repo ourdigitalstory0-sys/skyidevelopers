@@ -129,7 +129,7 @@ export default function SiteVisitModal({ isOpen, onClose, defaultProject }: Site
     }
   }, [isOpen, handleKeyDown]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return; // Prevent double submission
 
@@ -166,14 +166,57 @@ export default function SiteVisitModal({ isOpen, onClose, defaultProject }: Site
 
     setIsSubmitting(true);
 
-    // Simulate safe API submission delay
-    setTimeout(() => {
+    try {
+      // 1. Post to internal Next.js lead API (which dispatches via FormSubmit & SMTP)
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: cleanName,
+          phone: cleanPhone,
+          email: cleanEmail,
+          project: formData.project,
+          visitDate: formData.date,
+          visitTime: formData.timeSlot,
+          pickupNeeded: formData.pickupNeeded,
+          utmSource: 'Website VIP Site Visit Modal',
+        }),
+      });
+
+      const data = await res.json();
+      const ref = data.leadId || ('SK-VISIT-' + Math.floor(100000 + Math.random() * 900000));
+      safeSessionStorage.removeItem(DRAFT_KEY);
+      setBookingRef(ref);
+      setSubmitted(true);
+    } catch {
+      // 2. Direct client-side FormSubmit fail-safe
+      try {
+        await fetch('https://formsubmit.co/ajax/propsmartrealty@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            _subject: `🔥 SITE VISIT ENQUIRY [${cleanName}] — ${formData.project} (+91 ${cleanPhone})`,
+            _template: 'table',
+            _captcha: 'false',
+            'Customer Name': cleanName,
+            'Mobile Phone': `+91 ${cleanPhone}`,
+            'Email': cleanEmail || 'Not provided',
+            'Project': formData.project,
+            'Visit Date': formData.date,
+            'Visit Time': formData.timeSlot,
+            'Cab Pickup Required': formData.pickupNeeded ? 'YES' : 'NO',
+          }),
+        });
+      } catch (err) {
+        console.error('Direct FormSubmit fail-safe error', err);
+      }
       const ref = 'SK-VISIT-' + Math.floor(100000 + Math.random() * 900000);
       safeSessionStorage.removeItem(DRAFT_KEY);
       setBookingRef(ref);
-      setIsSubmitting(false);
       setSubmitted(true);
-    }, 600);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const resetForm = () => {
